@@ -14,7 +14,6 @@ template AgentAsk() {
 
     // Output
     signal output visited;
-    signal output movementHashOut;
 
     // Check the moves are valid
     var noMoves = 35;
@@ -28,7 +27,6 @@ template AgentAsk() {
     hash.in[2*noMoves] <== privSalt;
 
     pubMovementHash === hash.out;
-    movementHashOut <== hash.out;
 
     component visitedPosition[noMoves * 2];
     var has_visited = 0;
