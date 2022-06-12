@@ -28,7 +28,7 @@ template AgentAsk() {
     hash.in[2*noMoves] <== privSalt;
 
     pubMovementHash === hash.out;
-    movementHashOut <== pubMovementHash;
+    movementHashOut <== hash.out;
 
     component visitedPosition[noMoves * 2];
     var has_visited = 0;

@@ -12,7 +12,7 @@ all:
 @compile c: build-dir powers-of-tau
   echo "Compiling {{c}}.circom..."
   mkdir -p {{build_dir}}/{{c}}
-  circom contracts/circuits/{{c}}.circom --r1cs --wasm --sym --output {{build_dir}}/{{c}}
+  circom src/circuits/{{c}}.circom --r1cs --wasm --sym --output {{build_dir}}/{{c}}
   snarkjs r1cs info {{build_dir}}/{{c}}/{{c}}.r1cs > /dev/null
   snarkjs groth16 setup {{build_dir}}/{{c}}/{{c}}.r1cs {{powers_of_tau}} {{build_dir}}/{{c}}/init.zkey > /dev/null
   snarkjs zkey contribute {{build_dir}}/{{c}}/init.zkey {{build_dir}}/{{c}}/final.zkey --name="1st Contributor Name" -v -e="random text" > /dev/null

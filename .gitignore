@@ -3,8 +3,15 @@ node_modules
 coverage
 coverage.json
 typechain
+node_modules
+typechain-types
+artifacts
 build/powersOfTau28_hez_final_18.ptau
 
 #Hardhat files
 cache
 artifacts
+
+deployments/localhost
+src/contracts/verifiers
+src/web/.next
