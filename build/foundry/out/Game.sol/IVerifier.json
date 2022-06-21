@@ -50,13 +50,13 @@
   },
   "ast": {
     "absolutePath": "src/contracts/Game.sol",
-    "id": 1177,
+    "id": 1346,
     "exportedSymbols": {
       "AgentAskVerifier": [
         1024
       ],
       "Game": [
-        1176
+        1345
       ],
       "IVerifier": [
         1051
@@ -66,27 +66,27 @@
       ]
     },
     "nodeType": "SourceUnit",
-    "src": "32:1387:1",
+    "src": "32:2402:1",
     "nodes": [
       {
         "id": 1026,
         "nodeType": "PragmaDirective",
-        "src": "32:24:1",
+        "src": "32:23:1",
         "literals": [
           "solidity",
           "^",
           "0.8",
-          ".13"
+          ".4"
         ]
       },
       {
         "id": 1027,
         "nodeType": "ImportDirective",
-        "src": "58:51:1",
+        "src": "57:51:1",
         "absolutePath": "build/AgentAsk/AgentAskVerifier.sol",
         "file": "../../build/AgentAsk/AgentAskVerifier.sol",
         "nameLocation": "-1:-1:-1",
-        "scope": 1177,
+        "scope": 1346,
         "sourceUnit": 1025,
         "symbolAliases": [],
         "unitAlias": ""
@@ -94,18 +94,18 @@
       {
         "id": 1051,
         "nodeType": "ContractDefinition",
-        "src": "111:207:1",
+        "src": "110:207:1",
         "nodes": [
           {
             "id": 1050,
             "nodeType": "FunctionDefinition",
-            "src": "137:179:1",
+            "src": "136:179:1",
             "functionSelector": "c9219a7a",
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "verifyProof",
-            "nameLocation": "146:11:1",
+            "nameLocation": "145:11:1",
             "parameters": {
               "id": 1046,
               "nodeType": "ParameterList",
@@ -115,10 +115,10 @@
                   "id": 1031,
                   "mutability": "mutable",
                   "name": "a",
-                  "nameLocation": "185:1:1",
+                  "nameLocation": "184:1:1",
                   "nodeType": "VariableDeclaration",
                   "scope": 1050,
-                  "src": "167:19:1",
+                  "src": "166:19:1",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -130,7 +130,7 @@
                       "id": 1028,
                       "name": "uint256",
                       "nodeType": "ElementaryTypeName",
-                      "src": "167:7:1",
+                      "src": "166:7:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -146,7 +146,7 @@
                       "kind": "number",
                       "lValueRequested": false,
                       "nodeType": "Literal",
-                      "src": "175:1:1",
+                      "src": "174:1:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_rational_2_by_1",
                         "typeString": "int_const 2"
@@ -154,7 +154,7 @@
                       "value": "2"
                     },
                     "nodeType": "ArrayTypeName",
-                    "src": "167:10:1",
+                    "src": "166:10:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_uint256_$2_storage_ptr",
                       "typeString": "uint256[2]"
@@ -167,10 +167,10 @@
                   "id": 1037,
                   "mutability": "mutable",
                   "name": "b",
-                  "nameLocation": "217:1:1",
+                  "nameLocation": "216:1:1",
                   "nodeType": "VariableDeclaration",
                   "scope": 1050,
-                  "src": "196:22:1",
+                  "src": "195:22:1",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -183,7 +183,7 @@
                         "id": 1032,
                         "name": "uint256",
                         "nodeType": "ElementaryTypeName",
-                        "src": "196:7:1",
+                        "src": "195:7:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -199,7 +199,7 @@
                         "kind": "number",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "204:1:1",
+                        "src": "203:1:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_rational_2_by_1",
                           "typeString": "int_const 2"
@@ -207,7 +207,7 @@
                         "value": "2"
                       },
                       "nodeType": "ArrayTypeName",
-                      "src": "196:10:1",
+                      "src": "195:10:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_array$_t_uint256_$2_storage_ptr",
                         "typeString": "uint256[2]"
@@ -223,7 +223,7 @@
                       "kind": "number",
                       "lValueRequested": false,
                       "nodeType": "Literal",
-                      "src": "207:1:1",
+                      "src": "206:1:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_rational_2_by_1",
                         "typeString": "int_const 2"
@@ -231,7 +231,7 @@
                       "value": "2"
                     },
                     "nodeType": "ArrayTypeName",
-                    "src": "196:13:1",
+                    "src": "195:13:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_array$_t_uint256_$2_storage_$2_storage_ptr",
                       "typeString": "uint256[2][2]"
@@ -244,10 +244,10 @@
                   "id": 1041,
                   "mutability": "mutable",
                   "name": "c",
-                  "nameLocation": "246:1:1",
+                  "nameLocation": "245:1:1",
                   "nodeType": "VariableDeclaration",
                   "scope": 1050,
-                  "src": "228:19:1",
+                  "src": "227:19:1",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -259,7 +259,7 @@
                       "id": 1038,
                       "name": "uint256",
                       "nodeType": "ElementaryTypeName",
-                      "src": "228:7:1",
+                      "src": "227:7:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -275,7 +275,7 @@
                       "kind": "number",
                       "lValueRequested": false,
                       "nodeType": "Literal",
-                      "src": "236:1:1",
+                      "src": "235:1:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_rational_2_by_1",
                         "typeString": "int_const 2"
@@ -283,7 +283,7 @@
                       "value": "2"
                     },
                     "nodeType": "ArrayTypeName",
-                    "src": "228:10:1",
+                    "src": "227:10:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_uint256_$2_storage_ptr",
                       "typeString": "uint256[2]"
@@ -296,10 +296,10 @@
                   "id": 1045,
                   "mutability": "mutable",
                   "name": "input",
-                  "nameLocation": "275:5:1",
+                  "nameLocation": "274:5:1",
                   "nodeType": "VariableDeclaration",
                   "scope": 1050,
-                  "src": "257:23:1",
+                  "src": "256:23:1",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -311,7 +311,7 @@
                       "id": 1042,
                       "name": "uint256",
                       "nodeType": "ElementaryTypeName",
-                      "src": "257:7:1",
+                      "src": "256:7:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -327,7 +327,7 @@
                       "kind": "number",
                       "lValueRequested": false,
                       "nodeType": "Literal",
-                      "src": "265:1:1",
+                      "src": "264:1:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_rational_8_by_1",
                         "typeString": "int_const 8"
@@ -335,7 +335,7 @@
                       "value": "8"
                     },
                     "nodeType": "ArrayTypeName",
-                    "src": "257:10:1",
+                    "src": "256:10:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_uint256_$8_storage_ptr",
                       "typeString": "uint256[8]"
@@ -344,7 +344,7 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "157:129:1"
+              "src": "156:129:1"
             },
             "returnParameters": {
               "id": 1049,
@@ -358,7 +358,7 @@
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
                   "scope": 1050,
-                  "src": "310:4:1",
+                  "src": "309:4:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -369,7 +369,7 @@
                     "id": 1047,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "310:4:1",
+                    "src": "309:4:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -378,7 +378,7 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "309:6:1"
+              "src": "308:6:1"
             },
             "scope": 1051,
             "stateMutability": "view",
@@ -396,25 +396,25 @@
           1051
         ],
         "name": "IVerifier",
-        "nameLocation": "121:9:1",
-        "scope": 1177,
+        "nameLocation": "120:9:1",
+        "scope": 1346,
         "usedErrors": []
       },
       {
-        "id": 1176,
+        "id": 1345,
         "nodeType": "ContractDefinition",
-        "src": "320:1098:1",
+        "src": "319:2114:1",
         "nodes": [
           {
             "id": 1054,
             "nodeType": "VariableDeclaration",
-            "src": "340:25:1",
+            "src": "339:25:1",
             "constant": false,
             "functionSelector": "2b7ac3f3",
             "mutability": "mutable",
             "name": "verifier",
-            "nameLocation": "357:8:1",
-            "scope": 1176,
+            "nameLocation": "356:8:1",
+            "scope": 1345,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -429,10 +429,10 @@
                 "name": "IVerifier",
                 "nodeType": "IdentifierPath",
                 "referencedDeclaration": 1051,
-                "src": "340:9:1"
+                "src": "339:9:1"
               },
               "referencedDeclaration": 1051,
-              "src": "340:9:1",
+              "src": "339:9:1",
               "typeDescriptions": {
                 "typeIdentifier": "t_contract$_IVerifier_$1051",
                 "typeString": "contract IVerifier"
@@ -441,15 +441,147 @@
             "visibility": "public"
           },
           {
-            "id": 1058,
+            "id": 1063,
+            "nodeType": "EnumDefinition",
+            "src": "371:140:1",
+            "canonicalName": "Game.Features",
+            "members": [
+              {
+                "id": 1055,
+                "name": "RED",
+                "nameLocation": "395:3:1",
+                "nodeType": "EnumValue",
+                "src": "395:3:1"
+              },
+              {
+                "id": 1056,
+                "name": "BLUE",
+                "nameLocation": "408:4:1",
+                "nodeType": "EnumValue",
+                "src": "408:4:1"
+              },
+              {
+                "id": 1057,
+                "name": "GREEN",
+                "nameLocation": "422:5:1",
+                "nodeType": "EnumValue",
+                "src": "422:5:1"
+              },
+              {
+                "id": 1058,
+                "name": "YELLOW",
+                "nameLocation": "437:6:1",
+                "nodeType": "EnumValue",
+                "src": "437:6:1"
+              },
+              {
+                "id": 1059,
+                "name": "PURPLE",
+                "nameLocation": "453:6:1",
+                "nodeType": "EnumValue",
+                "src": "453:6:1"
+              },
+              {
+                "id": 1060,
+                "name": "ORANGE",
+                "nameLocation": "469:6:1",
+                "nodeType": "EnumValue",
+                "src": "469:6:1"
+              },
+              {
+                "id": 1061,
+                "name": "WHITE",
+                "nameLocation": "485:5:1",
+                "nodeType": "EnumValue",
+                "src": "485:5:1"
+              },
+              {
+                "id": 1062,
+                "name": "BLACK",
+                "nameLocation": "500:5:1",
+                "nodeType": "EnumValue",
+                "src": "500:5:1"
+              }
+            ],
+            "name": "Features",
+            "nameLocation": "376:8:1"
+          },
+          {
+            "id": 1068,
+            "nodeType": "StructDefinition",
+            "src": "517:57:1",
+            "canonicalName": "Game.Position",
+            "members": [
+              {
+                "constant": false,
+                "id": 1065,
+                "mutability": "mutable",
+                "name": "x",
+                "nameLocation": "549:1:1",
+                "nodeType": "VariableDeclaration",
+                "scope": 1068,
+                "src": "543:7:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint8",
+                  "typeString": "uint8"
+                },
+                "typeName": {
+                  "id": 1064,
+                  "name": "uint8",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "543:5:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 1067,
+                "mutability": "mutable",
+                "name": "y",
+                "nameLocation": "566:1:1",
+                "nodeType": "VariableDeclaration",
+                "scope": 1068,
+                "src": "560:7:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint8",
+                  "typeString": "uint8"
+                },
+                "typeName": {
+                  "id": 1066,
+                  "name": "uint8",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "560:5:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "Position",
+            "nameLocation": "524:8:1",
+            "scope": 1345,
+            "visibility": "public"
+          },
+          {
+            "id": 1072,
             "nodeType": "VariableDeclaration",
-            "src": "401:46:1",
+            "src": "609:46:1",
             "constant": false,
             "functionSelector": "22fe0ea3",
             "mutability": "mutable",
             "name": "movesHashes",
-            "nameLocation": "436:11:1",
-            "scope": 1176,
+            "nameLocation": "644:11:1",
+            "scope": 1345,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -457,28 +589,28 @@
               "typeString": "mapping(uint256 => uint256)"
             },
             "typeName": {
-              "id": 1057,
+              "id": 1071,
               "keyType": {
-                "id": 1055,
+                "id": 1069,
                 "name": "uint256",
                 "nodeType": "ElementaryTypeName",
-                "src": "409:7:1",
+                "src": "617:7:1",
                 "typeDescriptions": {
                   "typeIdentifier": "t_uint256",
                   "typeString": "uint256"
                 }
               },
               "nodeType": "Mapping",
-              "src": "401:27:1",
+              "src": "609:27:1",
               "typeDescriptions": {
                 "typeIdentifier": "t_mapping$_t_uint256_$_t_uint256_$",
                 "typeString": "mapping(uint256 => uint256)"
               },
               "valueType": {
-                "id": 1056,
+                "id": 1070,
                 "name": "uint256",
                 "nodeType": "ElementaryTypeName",
-                "src": "420:7:1",
+                "src": "628:7:1",
                 "typeDescriptions": {
                   "typeIdentifier": "t_uint256",
                   "typeString": "uint256"
@@ -488,15 +620,15 @@
             "visibility": "public"
           },
           {
-            "id": 1063,
+            "id": 1077,
             "nodeType": "VariableDeclaration",
-            "src": "478:43:1",
+            "src": "686:43:1",
             "constant": false,
             "functionSelector": "6fee2fe4",
             "mutability": "mutable",
             "name": "agents",
-            "nameLocation": "515:6:1",
-            "scope": 1176,
+            "nameLocation": "723:6:1",
+            "scope": 1345,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -504,38 +636,38 @@
               "typeString": "mapping(uint256 => address[])"
             },
             "typeName": {
-              "id": 1062,
+              "id": 1076,
               "keyType": {
-                "id": 1059,
+                "id": 1073,
                 "name": "uint256",
                 "nodeType": "ElementaryTypeName",
-                "src": "486:7:1",
+                "src": "694:7:1",
                 "typeDescriptions": {
                   "typeIdentifier": "t_uint256",
                   "typeString": "uint256"
                 }
               },
               "nodeType": "Mapping",
-              "src": "478:29:1",
+              "src": "686:29:1",
               "typeDescriptions": {
                 "typeIdentifier": "t_mapping$_t_uint256_$_t_array$_t_address_$dyn_storage_$",
                 "typeString": "mapping(uint256 => address[])"
               },
               "valueType": {
                 "baseType": {
-                  "id": 1060,
+                  "id": 1074,
                   "name": "address",
                   "nodeType": "ElementaryTypeName",
-                  "src": "497:7:1",
+                  "src": "705:7:1",
                   "stateMutability": "nonpayable",
                   "typeDescriptions": {
                     "typeIdentifier": "t_address",
                     "typeString": "address"
                   }
                 },
-                "id": 1061,
+                "id": 1075,
                 "nodeType": "ArrayTypeName",
-                "src": "497:9:1",
+                "src": "705:9:1",
                 "typeDescriptions": {
                   "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
                   "typeString": "address[]"
@@ -545,28 +677,98 @@
             "visibility": "public"
           },
           {
-            "id": 1075,
+            "id": 1084,
+            "nodeType": "VariableDeclaration",
+            "src": "784:47:1",
+            "constant": false,
+            "functionSelector": "8303dde9",
+            "mutability": "mutable",
+            "name": "features",
+            "nameLocation": "823:8:1",
+            "scope": 1345,
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_enum$_Features_$1063_$_t_array$_t_struct$_Position_$1068_storage_$dyn_storage_$",
+              "typeString": "mapping(enum Game.Features => struct Game.Position[])"
+            },
+            "typeName": {
+              "id": 1083,
+              "keyType": {
+                "id": 1079,
+                "nodeType": "UserDefinedTypeName",
+                "pathNode": {
+                  "id": 1078,
+                  "name": "Features",
+                  "nodeType": "IdentifierPath",
+                  "referencedDeclaration": 1063,
+                  "src": "792:8:1"
+                },
+                "referencedDeclaration": 1063,
+                "src": "792:8:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_enum$_Features_$1063",
+                  "typeString": "enum Game.Features"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "784:31:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_enum$_Features_$1063_$_t_array$_t_struct$_Position_$1068_storage_$dyn_storage_$",
+                "typeString": "mapping(enum Game.Features => struct Game.Position[])"
+              },
+              "valueType": {
+                "baseType": {
+                  "id": 1081,
+                  "nodeType": "UserDefinedTypeName",
+                  "pathNode": {
+                    "id": 1080,
+                    "name": "Position",
+                    "nodeType": "IdentifierPath",
+                    "referencedDeclaration": 1068,
+                    "src": "804:8:1"
+                  },
+                  "referencedDeclaration": 1068,
+                  "src": "804:8:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_Position_$1068_storage_ptr",
+                    "typeString": "struct Game.Position"
+                  }
+                },
+                "id": 1082,
+                "nodeType": "ArrayTypeName",
+                "src": "804:10:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_array$_t_struct$_Position_$1068_storage_$dyn_storage_ptr",
+                  "typeString": "struct Game.Position[]"
+                }
+              }
+            },
+            "visibility": "public"
+          },
+          {
+            "id": 1198,
             "nodeType": "FunctionDefinition",
-            "src": "528:79:1",
+            "src": "838:499:1",
             "body": {
-              "id": 1074,
+              "id": 1197,
               "nodeType": "Block",
-              "src": "559:48:1",
+              "src": "869:468:1",
               "statements": [
                 {
                   "expression": {
-                    "id": 1072,
+                    "id": 1093,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 1068,
+                      "id": 1089,
                       "name": "verifier",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 1054,
-                      "src": "569:8:1",
+                      "src": "879:8:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_contract$_IVerifier_$1051",
                         "typeString": "contract IVerifier"
@@ -577,12 +779,12 @@
                     "rightHandSide": {
                       "arguments": [
                         {
-                          "id": 1070,
+                          "id": 1091,
                           "name": "_verifier",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1065,
-                          "src": "590:9:1",
+                          "referencedDeclaration": 1086,
+                          "src": "900:9:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
                             "typeString": "address"
@@ -596,18 +798,18 @@
                             "typeString": "address"
                           }
                         ],
-                        "id": 1069,
+                        "id": 1090,
                         "name": "IVerifier",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 1051,
-                        "src": "580:9:1",
+                        "src": "890:9:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_type$_t_contract$_IVerifier_$1051_$",
                           "typeString": "type(contract IVerifier)"
                         }
                       },
-                      "id": 1071,
+                      "id": 1092,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -615,22 +817,1630 @@
                       "lValueRequested": false,
                       "names": [],
                       "nodeType": "FunctionCall",
-                      "src": "580:20:1",
+                      "src": "890:20:1",
                       "tryCall": false,
                       "typeDescriptions": {
                         "typeIdentifier": "t_contract$_IVerifier_$1051",
                         "typeString": "contract IVerifier"
                       }
                     },
-                    "src": "569:31:1",
+                    "src": "879:31:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_contract$_IVerifier_$1051",
                       "typeString": "contract IVerifier"
                     }
                   },
-                  "id": 1073,
+                  "id": 1094,
                   "nodeType": "ExpressionStatement",
-                  "src": "569:31:1"
+                  "src": "879:31:1"
+                },
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "expression": {
+                          "id": 1096,
+                          "name": "Features",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 1063,
+                          "src": "931:8:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_enum$_Features_$1063_$",
+                            "typeString": "type(enum Game.Features)"
+                          }
+                        },
+                        "id": 1097,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "lValueRequested": false,
+                        "memberName": "RED",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 1055,
+                        "src": "931:12:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_enum$_Features_$1063",
+                          "typeString": "enum Game.Features"
+                        }
+                      },
+                      {
+                        "components": [
+                          {
+                            "hexValue": "30",
+                            "id": 1098,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "number",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "946:1:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_rational_0_by_1",
+                              "typeString": "int_const 0"
+                            },
+                            "value": "0"
+                          },
+                          {
+                            "hexValue": "31",
+                            "id": 1099,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "number",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "949:1:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_rational_1_by_1",
+                              "typeString": "int_const 1"
+                            },
+                            "value": "1"
+                          },
+                          {
+                            "hexValue": "33",
+                            "id": 1100,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "number",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "952:1:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_rational_3_by_1",
+                              "typeString": "int_const 3"
+                            },
+                            "value": "3"
+                          },
+                          {
+                            "hexValue": "34",
+                            "id": 1101,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "number",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "955:1:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_rational_4_by_1",
+                              "typeString": "int_const 4"
+                            },
+                            "value": "4"
+                          },
+                          {
+                            "hexValue": "35",
+                            "id": 1102,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "number",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "958:1:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_rational_5_by_1",
+                              "typeString": "int_const 5"
+                            },
+                            "value": "5"
+                          }
+                        ],
+                        "id": 1103,
+                        "isConstant": false,
+                        "isInlineArray": true,
+                        "isLValue": false,
+                        "isPure": true,
+                        "lValueRequested": false,
+                        "nodeType": "TupleExpression",
+                        "src": "945:15:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_uint8_$5_memory_ptr",
+                          "typeString": "uint8[5] memory"
+                        }
+                      },
+                      {
+                        "components": [
+                          {
+                            "hexValue": "30",
+                            "id": 1104,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "number",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "963:1:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_rational_0_by_1",
+                              "typeString": "int_const 0"
+                            },
+                            "value": "0"
+                          },
+                          {
+                            "hexValue": "35",
+                            "id": 1105,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "number",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "966:1:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_rational_5_by_1",
+                              "typeString": "int_const 5"
+                            },
+                            "value": "5"
+                          },
+                          {
+                            "hexValue": "34",
+                            "id": 1106,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "number",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "969:1:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_rational_4_by_1",
+                              "typeString": "int_const 4"
+                            },
+                            "value": "4"
+                          },
+                          {
+                            "hexValue": "31",
+                            "id": 1107,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "number",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "972:1:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_rational_1_by_1",
+                              "typeString": "int_const 1"
+                            },
+                            "value": "1"
+                          },
+                          {
+                            "hexValue": "33",
+                            "id": 1108,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "number",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "975:1:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_rational_3_by_1",
+                              "typeString": "int_const 3"
+                            },
+                            "value": "3"
+                          }
+                        ],
+                        "id": 1109,
+                        "isConstant": false,
+                        "isInlineArray": true,
+                        "isLValue": false,
+                        "isPure": true,
+                        "lValueRequested": false,
+                        "nodeType": "TupleExpression",
+                        "src": "962:15:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_uint8_$5_memory_ptr",
+                          "typeString": "uint8[5] memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_enum$_Features_$1063",
+                          "typeString": "enum Game.Features"
+                        },
+                        {
+                          "typeIdentifier": "t_array$_t_uint8_$5_memory_ptr",
+                          "typeString": "uint8[5] memory"
+                        },
+                        {
+                          "typeIdentifier": "t_array$_t_uint8_$5_memory_ptr",
+                          "typeString": "uint8[5] memory"
+                        }
+                      ],
+                      "id": 1095,
+                      "name": "addFeature",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1344,
+                      "src": "920:10:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_enum$_Features_$1063_$_t_array$_t_uint8_$5_memory_ptr_$_t_array$_t_uint8_$5_memory_ptr_$returns$__$",
+                        "typeString": "function (enum Game.Features,uint8[5] memory,uint8[5] memory)"
+                      }
+                    },
+                    "id": 1110,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "920:58:1",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1111,
+                  "nodeType": "ExpressionStatement",
+                  "src": "920:58:1"
+                },
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "expression": {
+                          "id": 1113,
+                          "name": "Features",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 1063,
+                          "src": "999:8:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_enum$_Features_$1063_$",
+                            "typeString": "type(enum Game.Features)"
+                          }
+                        },
+                        "id": 1114,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "lValueRequested": false,
+                        "memberName": "BLUE",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 1056,
+                        "src": "999:13:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_enum$_Features_$1063",
+                          "typeString": "enum Game.Features"
+                        }
+                      },
+                      {
+                        "components": [
+                          {
+                            "hexValue": "31",
+                            "id": 1115,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "number",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "1015:1:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_rational_1_by_1",
+                              "typeString": "int_const 1"
+                            },
+                            "value": "1"
+                          },
+                          {
+                            "hexValue": "34",
+                            "id": 1116,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "number",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "1018:1:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_rational_4_by_1",
+                              "typeString": "int_const 4"
+                            },
+                            "value": "4"
+                          },
+                          {
+                            "hexValue": "34",
+                            "id": 1117,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "number",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "1021:1:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_rational_4_by_1",
+                              "typeString": "int_const 4"
+                            },
+                            "value": "4"
+                          },
+                          {
+                            "hexValue": "30",
+                            "id": 1118,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "number",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "1024:1:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_rational_0_by_1",
+                              "typeString": "int_const 0"
+                            },
+                            "value": "0"
+                          },
+                          {
+                            "hexValue": "35",
+                            "id": 1119,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "number",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "1027:1:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_rational_5_by_1",
+                              "typeString": "int_const 5"
+                            },
+                            "value": "5"
+                          }
+                        ],
+                        "id": 1120,
+                        "isConstant": false,
+                        "isInlineArray": true,
+                        "isLValue": false,
+                        "isPure": true,
+                        "lValueRequested": false,
+                        "nodeType": "TupleExpression",
+                        "src": "1014:15:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_uint8_$5_memory_ptr",
+                          "typeString": "uint8[5] memory"
+                        }
+                      },
+                      {
+                        "components": [
+                          {
+                            "hexValue": "30",
+                            "id": 1121,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "number",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "1032:1:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_rational_0_by_1",
+                              "typeString": "int_const 0"
+                            },
+                            "value": "0"
+                          },
+                          {
+                            "hexValue": "31",
+                            "id": 1122,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "number",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "1035:1:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_rational_1_by_1",
+                              "typeString": "int_const 1"
+                            },
+                            "value": "1"
+                          },
+                          {
+                            "hexValue": "33",
+                            "id": 1123,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "number",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "1038:1:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_rational_3_by_1",
+                              "typeString": "int_const 3"
+                            },
+                            "value": "3"
+                          },
+                          {
+                            "hexValue": "35",
+                            "id": 1124,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "number",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "1041:1:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_rational_5_by_1",
+                              "typeString": "int_const 5"
+                            },
+                            "value": "5"
+                          },
+                          {
+                            "hexValue": "36",
+                            "id": 1125,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "number",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "1044:1:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_rational_6_by_1",
+                              "typeString": "int_const 6"
+                            },
+                            "value": "6"
+                          }
+                        ],
+                        "id": 1126,
+                        "isConstant": false,
+                        "isInlineArray": true,
+                        "isLValue": false,
+                        "isPure": true,
+                        "lValueRequested": false,
+                        "nodeType": "TupleExpression",
+                        "src": "1031:15:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_uint8_$5_memory_ptr",
+                          "typeString": "uint8[5] memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_enum$_Features_$1063",
+                          "typeString": "enum Game.Features"
+                        },
+                        {
+                          "typeIdentifier": "t_array$_t_uint8_$5_memory_ptr",
+                          "typeString": "uint8[5] memory"
+                        },
+                        {
+                          "typeIdentifier": "t_array$_t_uint8_$5_memory_ptr",
+                          "typeString": "uint8[5] memory"
+                        }
+                      ],
+                      "id": 1112,
+                      "name": "addFeature",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1344,
+                      "src": "988:10:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_enum$_Features_$1063_$_t_array$_t_uint8_$5_memory_ptr_$_t_array$_t_uint8_$5_memory_ptr_$returns$__$",
+                        "typeString": "function (enum Game.Features,uint8[5] memory,uint8[5] memory)"
+                      }
+                    },
+                    "id": 1127,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "988:59:1",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1128,
+                  "nodeType": "ExpressionStatement",
+                  "src": "988:59:1"
+                },
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "expression": {
+                          "id": 1130,
+                          "name": "Features",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 1063,
+                          "src": "1068:8:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_enum$_Features_$1063_$",
+                            "typeString": "type(enum Game.Features)"
+                          }
+                        },
+                        "id": 1131,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "lValueRequested": false,
+                        "memberName": "GREEN",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 1057,
+                        "src": "1068:14:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_enum$_Features_$1063",
+                          "typeString": "enum Game.Features"
+                        }
+                      },
+                      {
+                        "components": [
+                          {
+                            "hexValue": "32",
+                            "id": 1132,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "number",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "1085:1:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_rational_2_by_1",
+                              "typeString": "int_const 2"
+                            },
+                            "value": "2"
+                          },
+                          {
+                            "hexValue": "33",
+                            "id": 1133,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "number",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "1088:1:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_rational_3_by_1",
+                              "typeString": "int_const 3"
+                            },
+                            "value": "3"
+                          },
+                          {
+                            "hexValue": "31",
+                            "id": 1134,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "number",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "1091:1:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_rational_1_by_1",
+                              "typeString": "int_const 1"
+                            },
+                            "value": "1"
+                          },
+                          {
+                            "hexValue": "33",
+                            "id": 1135,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "number",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "1094:1:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_rational_3_by_1",
+                              "typeString": "int_const 3"
+                            },
+                            "value": "3"
+                          },
+                          {
+                            "hexValue": "30",
+                            "id": 1136,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "number",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "1097:1:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_rational_0_by_1",
+                              "typeString": "int_const 0"
+                            },
+                            "value": "0"
+                          }
+                        ],
+                        "id": 1137,
+                        "isConstant": false,
+                        "isInlineArray": true,
+                        "isLValue": false,
+                        "isPure": true,
+                        "lValueRequested": false,
+                        "nodeType": "TupleExpression",
+                        "src": "1084:15:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_uint8_$5_memory_ptr",
+                          "typeString": "uint8[5] memory"
+                        }
+                      },
+                      {
+                        "components": [
+                          {
+                            "hexValue": "30",
+                            "id": 1138,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "number",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "1102:1:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_rational_0_by_1",
+                              "typeString": "int_const 0"
+                            },
+                            "value": "0"
+                          },
+                          {
+                            "hexValue": "32",
+                            "id": 1139,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "number",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "1105:1:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_rational_2_by_1",
+                              "typeString": "int_const 2"
+                            },
+                            "value": "2"
+                          },
+                          {
+                            "hexValue": "33",
+                            "id": 1140,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "number",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "1108:1:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_rational_3_by_1",
+                              "typeString": "int_const 3"
+                            },
+                            "value": "3"
+                          },
+                          {
+                            "hexValue": "35",
+                            "id": 1141,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "number",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "1111:1:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_rational_5_by_1",
+                              "typeString": "int_const 5"
+                            },
+                            "value": "5"
+                          },
+                          {
+                            "hexValue": "36",
+                            "id": 1142,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "number",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "1114:1:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_rational_6_by_1",
+                              "typeString": "int_const 6"
+                            },
+                            "value": "6"
+                          }
+                        ],
+                        "id": 1143,
+                        "isConstant": false,
+                        "isInlineArray": true,
+                        "isLValue": false,
+                        "isPure": true,
+                        "lValueRequested": false,
+                        "nodeType": "TupleExpression",
+                        "src": "1101:15:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_uint8_$5_memory_ptr",
+                          "typeString": "uint8[5] memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_enum$_Features_$1063",
+                          "typeString": "enum Game.Features"
+                        },
+                        {
+                          "typeIdentifier": "t_array$_t_uint8_$5_memory_ptr",
+                          "typeString": "uint8[5] memory"
+                        },
+                        {
+                          "typeIdentifier": "t_array$_t_uint8_$5_memory_ptr",
+                          "typeString": "uint8[5] memory"
+                        }
+                      ],
+                      "id": 1129,
+                      "name": "addFeature",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1344,
+                      "src": "1057:10:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_enum$_Features_$1063_$_t_array$_t_uint8_$5_memory_ptr_$_t_array$_t_uint8_$5_memory_ptr_$returns$__$",
+                        "typeString": "function (enum Game.Features,uint8[5] memory,uint8[5] memory)"
+                      }
+                    },
+                    "id": 1144,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1057:60:1",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1145,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1057:60:1"
+                },
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "expression": {
+                          "id": 1147,
+                          "name": "Features",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 1063,
+                          "src": "1138:8:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_enum$_Features_$1063_$",
+                            "typeString": "type(enum Game.Features)"
+                          }
+                        },
+                        "id": 1148,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "lValueRequested": false,
+                        "memberName": "YELLOW",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 1058,
+                        "src": "1138:15:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_enum$_Features_$1063",
+                          "typeString": "enum Game.Features"
+                        }
+                      },
+                      {
+                        "components": [
+                          {
+                            "hexValue": "33",
+                            "id": 1149,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "number",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "1156:1:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_rational_3_by_1",
+                              "typeString": "int_const 3"
+                            },
+                            "value": "3"
+                          },
+                          {
+                            "hexValue": "31",
+                            "id": 1150,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "number",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "1159:1:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_rational_1_by_1",
+                              "typeString": "int_const 1"
+                            },
+                            "value": "1"
+                          },
+                          {
+                            "hexValue": "33",
+                            "id": 1151,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "number",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "1162:1:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_rational_3_by_1",
+                              "typeString": "int_const 3"
+                            },
+                            "value": "3"
+                          },
+                          {
+                            "hexValue": "31",
+                            "id": 1152,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "number",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "1165:1:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_rational_1_by_1",
+                              "typeString": "int_const 1"
+                            },
+                            "value": "1"
+                          },
+                          {
+                            "hexValue": "32",
+                            "id": 1153,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "number",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "1168:1:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_rational_2_by_1",
+                              "typeString": "int_const 2"
+                            },
+                            "value": "2"
+                          }
+                        ],
+                        "id": 1154,
+                        "isConstant": false,
+                        "isInlineArray": true,
+                        "isLValue": false,
+                        "isPure": true,
+                        "lValueRequested": false,
+                        "nodeType": "TupleExpression",
+                        "src": "1155:15:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_uint8_$5_memory_ptr",
+                          "typeString": "uint8[5] memory"
+                        }
+                      },
+                      {
+                        "components": [
+                          {
+                            "hexValue": "30",
+                            "id": 1155,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "number",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "1173:1:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_rational_0_by_1",
+                              "typeString": "int_const 0"
+                            },
+                            "value": "0"
+                          },
+                          {
+                            "hexValue": "31",
+                            "id": 1156,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "number",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "1176:1:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_rational_1_by_1",
+                              "typeString": "int_const 1"
+                            },
+                            "value": "1"
+                          },
+                          {
+                            "hexValue": "33",
+                            "id": 1157,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "number",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "1179:1:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_rational_3_by_1",
+                              "typeString": "int_const 3"
+                            },
+                            "value": "3"
+                          },
+                          {
+                            "hexValue": "34",
+                            "id": 1158,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "number",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "1182:1:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_rational_4_by_1",
+                              "typeString": "int_const 4"
+                            },
+                            "value": "4"
+                          },
+                          {
+                            "hexValue": "36",
+                            "id": 1159,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "number",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "1185:1:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_rational_6_by_1",
+                              "typeString": "int_const 6"
+                            },
+                            "value": "6"
+                          }
+                        ],
+                        "id": 1160,
+                        "isConstant": false,
+                        "isInlineArray": true,
+                        "isLValue": false,
+                        "isPure": true,
+                        "lValueRequested": false,
+                        "nodeType": "TupleExpression",
+                        "src": "1172:15:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_uint8_$5_memory_ptr",
+                          "typeString": "uint8[5] memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_enum$_Features_$1063",
+                          "typeString": "enum Game.Features"
+                        },
+                        {
+                          "typeIdentifier": "t_array$_t_uint8_$5_memory_ptr",
+                          "typeString": "uint8[5] memory"
+                        },
+                        {
+                          "typeIdentifier": "t_array$_t_uint8_$5_memory_ptr",
+                          "typeString": "uint8[5] memory"
+                        }
+                      ],
+                      "id": 1146,
+                      "name": "addFeature",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1344,
+                      "src": "1127:10:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_enum$_Features_$1063_$_t_array$_t_uint8_$5_memory_ptr_$_t_array$_t_uint8_$5_memory_ptr_$returns$__$",
+                        "typeString": "function (enum Game.Features,uint8[5] memory,uint8[5] memory)"
+                      }
+                    },
+                    "id": 1161,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1127:61:1",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1162,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1127:61:1"
+                },
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "expression": {
+                          "id": 1164,
+                          "name": "Features",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 1063,
+                          "src": "1209:8:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_enum$_Features_$1063_$",
+                            "typeString": "type(enum Game.Features)"
+                          }
+                        },
+                        "id": 1165,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "lValueRequested": false,
+                        "memberName": "PURPLE",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 1059,
+                        "src": "1209:15:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_enum$_Features_$1063",
+                          "typeString": "enum Game.Features"
+                        }
+                      },
+                      {
+                        "components": [
+                          {
+                            "hexValue": "34",
+                            "id": 1166,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "number",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "1227:1:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_rational_4_by_1",
+                              "typeString": "int_const 4"
+                            },
+                            "value": "4"
+                          },
+                          {
+                            "hexValue": "32",
+                            "id": 1167,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "number",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "1230:1:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_rational_2_by_1",
+                              "typeString": "int_const 2"
+                            },
+                            "value": "2"
+                          },
+                          {
+                            "hexValue": "35",
+                            "id": 1168,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "number",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "1233:1:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_rational_5_by_1",
+                              "typeString": "int_const 5"
+                            },
+                            "value": "5"
+                          },
+                          {
+                            "hexValue": "30",
+                            "id": 1169,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "number",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "1236:1:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_rational_0_by_1",
+                              "typeString": "int_const 0"
+                            },
+                            "value": "0"
+                          },
+                          {
+                            "hexValue": "34",
+                            "id": 1170,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "number",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "1239:1:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_rational_4_by_1",
+                              "typeString": "int_const 4"
+                            },
+                            "value": "4"
+                          }
+                        ],
+                        "id": 1171,
+                        "isConstant": false,
+                        "isInlineArray": true,
+                        "isLValue": false,
+                        "isPure": true,
+                        "lValueRequested": false,
+                        "nodeType": "TupleExpression",
+                        "src": "1226:15:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_uint8_$5_memory_ptr",
+                          "typeString": "uint8[5] memory"
+                        }
+                      },
+                      {
+                        "components": [
+                          {
+                            "hexValue": "30",
+                            "id": 1172,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "number",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "1244:1:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_rational_0_by_1",
+                              "typeString": "int_const 0"
+                            },
+                            "value": "0"
+                          },
+                          {
+                            "hexValue": "32",
+                            "id": 1173,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "number",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "1247:1:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_rational_2_by_1",
+                              "typeString": "int_const 2"
+                            },
+                            "value": "2"
+                          },
+                          {
+                            "hexValue": "32",
+                            "id": 1174,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "number",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "1250:1:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_rational_2_by_1",
+                              "typeString": "int_const 2"
+                            },
+                            "value": "2"
+                          },
+                          {
+                            "hexValue": "33",
+                            "id": 1175,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "number",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "1253:1:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_rational_3_by_1",
+                              "typeString": "int_const 3"
+                            },
+                            "value": "3"
+                          },
+                          {
+                            "hexValue": "35",
+                            "id": 1176,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "number",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "1256:1:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_rational_5_by_1",
+                              "typeString": "int_const 5"
+                            },
+                            "value": "5"
+                          }
+                        ],
+                        "id": 1177,
+                        "isConstant": false,
+                        "isInlineArray": true,
+                        "isLValue": false,
+                        "isPure": true,
+                        "lValueRequested": false,
+                        "nodeType": "TupleExpression",
+                        "src": "1243:15:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_uint8_$5_memory_ptr",
+                          "typeString": "uint8[5] memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_enum$_Features_$1063",
+                          "typeString": "enum Game.Features"
+                        },
+                        {
+                          "typeIdentifier": "t_array$_t_uint8_$5_memory_ptr",
+                          "typeString": "uint8[5] memory"
+                        },
+                        {
+                          "typeIdentifier": "t_array$_t_uint8_$5_memory_ptr",
+                          "typeString": "uint8[5] memory"
+                        }
+                      ],
+                      "id": 1163,
+                      "name": "addFeature",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1344,
+                      "src": "1198:10:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_enum$_Features_$1063_$_t_array$_t_uint8_$5_memory_ptr_$_t_array$_t_uint8_$5_memory_ptr_$returns$__$",
+                        "typeString": "function (enum Game.Features,uint8[5] memory,uint8[5] memory)"
+                      }
+                    },
+                    "id": 1178,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1198:61:1",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1179,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1198:61:1"
+                },
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "expression": {
+                          "id": 1181,
+                          "name": "Features",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 1063,
+                          "src": "1280:8:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_enum$_Features_$1063_$",
+                            "typeString": "type(enum Game.Features)"
+                          }
+                        },
+                        "id": 1182,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "lValueRequested": false,
+                        "memberName": "ORANGE",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 1060,
+                        "src": "1280:15:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_enum$_Features_$1063",
+                          "typeString": "enum Game.Features"
+                        }
+                      },
+                      {
+                        "components": [
+                          {
+                            "hexValue": "35",
+                            "id": 1183,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "number",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "1298:1:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_rational_5_by_1",
+                              "typeString": "int_const 5"
+                            },
+                            "value": "5"
+                          },
+                          {
+                            "hexValue": "30",
+                            "id": 1184,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "number",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "1301:1:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_rational_0_by_1",
+                              "typeString": "int_const 0"
+                            },
+                            "value": "0"
+                          },
+                          {
+                            "hexValue": "33",
+                            "id": 1185,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "number",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "1304:1:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_rational_3_by_1",
+                              "typeString": "int_const 3"
+                            },
+                            "value": "3"
+                          },
+                          {
+                            "hexValue": "34",
+                            "id": 1186,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "number",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "1307:1:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_rational_4_by_1",
+                              "typeString": "int_const 4"
+                            },
+                            "value": "4"
+                          },
+                          {
+                            "hexValue": "31",
+                            "id": 1187,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "number",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "1310:1:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_rational_1_by_1",
+                              "typeString": "int_const 1"
+                            },
+                            "value": "1"
+                          }
+                        ],
+                        "id": 1188,
+                        "isConstant": false,
+                        "isInlineArray": true,
+                        "isLValue": false,
+                        "isPure": true,
+                        "lValueRequested": false,
+                        "nodeType": "TupleExpression",
+                        "src": "1297:15:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_uint8_$5_memory_ptr",
+                          "typeString": "uint8[5] memory"
+                        }
+                      },
+                      {
+                        "components": [
+                          {
+                            "hexValue": "30",
+                            "id": 1189,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "number",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "1315:1:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_rational_0_by_1",
+                              "typeString": "int_const 0"
+                            },
+                            "value": "0"
+                          },
+                          {
+                            "hexValue": "31",
+                            "id": 1190,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "number",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "1318:1:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_rational_1_by_1",
+                              "typeString": "int_const 1"
+                            },
+                            "value": "1"
+                          },
+                          {
+                            "hexValue": "31",
+                            "id": 1191,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "number",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "1321:1:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_rational_1_by_1",
+                              "typeString": "int_const 1"
+                            },
+                            "value": "1"
+                          },
+                          {
+                            "hexValue": "35",
+                            "id": 1192,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "number",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "1324:1:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_rational_5_by_1",
+                              "typeString": "int_const 5"
+                            },
+                            "value": "5"
+                          },
+                          {
+                            "hexValue": "36",
+                            "id": 1193,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "number",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "1327:1:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_rational_6_by_1",
+                              "typeString": "int_const 6"
+                            },
+                            "value": "6"
+                          }
+                        ],
+                        "id": 1194,
+                        "isConstant": false,
+                        "isInlineArray": true,
+                        "isLValue": false,
+                        "isPure": true,
+                        "lValueRequested": false,
+                        "nodeType": "TupleExpression",
+                        "src": "1314:15:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_uint8_$5_memory_ptr",
+                          "typeString": "uint8[5] memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_enum$_Features_$1063",
+                          "typeString": "enum Game.Features"
+                        },
+                        {
+                          "typeIdentifier": "t_array$_t_uint8_$5_memory_ptr",
+                          "typeString": "uint8[5] memory"
+                        },
+                        {
+                          "typeIdentifier": "t_array$_t_uint8_$5_memory_ptr",
+                          "typeString": "uint8[5] memory"
+                        }
+                      ],
+                      "id": 1180,
+                      "name": "addFeature",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1344,
+                      "src": "1269:10:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_enum$_Features_$1063_$_t_array$_t_uint8_$5_memory_ptr_$_t_array$_t_uint8_$5_memory_ptr_$returns$__$",
+                        "typeString": "function (enum Game.Features,uint8[5] memory,uint8[5] memory)"
+                      }
+                    },
+                    "id": 1195,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1269:61:1",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1196,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1269:61:1"
                 }
               ]
             },
@@ -640,18 +2450,18 @@
             "name": "",
             "nameLocation": "-1:-1:-1",
             "parameters": {
-              "id": 1066,
+              "id": 1087,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1065,
+                  "id": 1086,
                   "mutability": "mutable",
                   "name": "_verifier",
-                  "nameLocation": "548:9:1",
+                  "nameLocation": "858:9:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1075,
-                  "src": "540:17:1",
+                  "scope": 1198,
+                  "src": "850:17:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -659,10 +2469,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 1064,
+                    "id": 1085,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "540:7:1",
+                    "src": "850:7:1",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -672,27 +2482,27 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "539:19:1"
+              "src": "849:19:1"
             },
             "returnParameters": {
-              "id": 1067,
+              "id": 1088,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "559:0:1"
+              "src": "869:0:1"
             },
-            "scope": 1176,
+            "scope": 1345,
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "public"
           },
           {
-            "id": 1123,
+            "id": 1246,
             "nodeType": "FunctionDefinition",
-            "src": "613:392:1",
+            "src": "1343:392:1",
             "body": {
-              "id": 1122,
+              "id": 1245,
               "nodeType": "Block",
-              "src": "732:273:1",
+              "src": "1462:273:1",
               "statements": [
                 {
                   "expression": {
@@ -702,32 +2512,32 @@
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         },
-                        "id": 1090,
+                        "id": 1213,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "leftExpression": {
                           "baseExpression": {
-                            "id": 1086,
+                            "id": 1209,
                             "name": "movesHashes",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 1058,
-                            "src": "750:11:1",
+                            "referencedDeclaration": 1072,
+                            "src": "1480:11:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_mapping$_t_uint256_$_t_uint256_$",
                               "typeString": "mapping(uint256 => uint256)"
                             }
                           },
-                          "id": 1088,
+                          "id": 1211,
                           "indexExpression": {
-                            "id": 1087,
+                            "id": 1210,
                             "name": "gameId",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 1077,
-                            "src": "762:6:1",
+                            "referencedDeclaration": 1200,
+                            "src": "1492:6:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
@@ -738,7 +2548,7 @@
                           "isPure": false,
                           "lValueRequested": false,
                           "nodeType": "IndexAccess",
-                          "src": "750:19:1",
+                          "src": "1480:19:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -748,21 +2558,21 @@
                         "operator": "==",
                         "rightExpression": {
                           "hexValue": "30",
-                          "id": 1089,
+                          "id": 1212,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
                           "kind": "number",
                           "lValueRequested": false,
                           "nodeType": "Literal",
-                          "src": "773:1:1",
+                          "src": "1503:1:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_rational_0_by_1",
                             "typeString": "int_const 0"
                           },
                           "value": "0"
                         },
-                        "src": "750:24:1",
+                        "src": "1480:24:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bool",
                           "typeString": "bool"
@@ -770,14 +2580,14 @@
                       },
                       {
                         "hexValue": "47616d6520616c72656164792073746172746564",
-                        "id": 1091,
+                        "id": 1214,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "kind": "string",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "776:22:1",
+                        "src": "1506:22:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_stringliteral_eead4a7cf673f6d8360b078806663cbd4210869289d0db302f91dde3c52d62d3",
                           "typeString": "literal_string \"Game already started\""
@@ -796,7 +2606,7 @@
                           "typeString": "literal_string \"Game already started\""
                         }
                       ],
-                      "id": 1085,
+                      "id": 1208,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
@@ -804,13 +2614,13 @@
                         -18
                       ],
                       "referencedDeclaration": -18,
-                      "src": "742:7:1",
+                      "src": "1472:7:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
                         "typeString": "function (bool,string memory) pure"
                       }
                     },
-                    "id": 1092,
+                    "id": 1215,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -818,45 +2628,45 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "742:57:1",
+                    "src": "1472:57:1",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 1093,
+                  "id": 1216,
                   "nodeType": "ExpressionStatement",
-                  "src": "742:57:1"
+                  "src": "1472:57:1"
                 },
                 {
                   "expression": {
-                    "id": 1098,
+                    "id": 1221,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "baseExpression": {
-                        "id": 1094,
+                        "id": 1217,
                         "name": "movesHashes",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1058,
-                        "src": "809:11:1",
+                        "referencedDeclaration": 1072,
+                        "src": "1539:11:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_mapping$_t_uint256_$_t_uint256_$",
                           "typeString": "mapping(uint256 => uint256)"
                         }
                       },
-                      "id": 1096,
+                      "id": 1219,
                       "indexExpression": {
-                        "id": 1095,
+                        "id": 1218,
                         "name": "gameId",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1077,
-                        "src": "821:6:1",
+                        "referencedDeclaration": 1200,
+                        "src": "1551:6:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -867,7 +2677,7 @@
                       "isPure": false,
                       "lValueRequested": true,
                       "nodeType": "IndexAccess",
-                      "src": "809:19:1",
+                      "src": "1539:19:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -876,41 +2686,41 @@
                     "nodeType": "Assignment",
                     "operator": "=",
                     "rightHandSide": {
-                      "id": 1097,
+                      "id": 1220,
                       "name": "movesHash",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1082,
-                      "src": "831:9:1",
+                      "referencedDeclaration": 1205,
+                      "src": "1561:9:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
-                    "src": "809:31:1",
+                    "src": "1539:31:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "id": 1099,
+                  "id": 1222,
                   "nodeType": "ExpressionStatement",
-                  "src": "809:31:1"
+                  "src": "1539:31:1"
                 },
                 {
                   "assignments": [
-                    1101
+                    1224
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 1101,
+                      "id": 1224,
                       "mutability": "mutable",
                       "name": "numAgents",
-                      "nameLocation": "859:9:1",
+                      "nameLocation": "1589:9:1",
                       "nodeType": "VariableDeclaration",
-                      "scope": 1122,
-                      "src": "851:17:1",
+                      "scope": 1245,
+                      "src": "1581:17:1",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -918,10 +2728,10 @@
                         "typeString": "uint256"
                       },
                       "typeName": {
-                        "id": 1100,
+                        "id": 1223,
                         "name": "uint256",
                         "nodeType": "ElementaryTypeName",
-                        "src": "851:7:1",
+                        "src": "1581:7:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -930,35 +2740,35 @@
                       "visibility": "internal"
                     }
                   ],
-                  "id": 1104,
+                  "id": 1227,
                   "initialValue": {
                     "expression": {
-                      "id": 1102,
+                      "id": 1225,
                       "name": "_agents",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1080,
-                      "src": "871:7:1",
+                      "referencedDeclaration": 1203,
+                      "src": "1601:7:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_array$_t_address_$dyn_calldata_ptr",
                         "typeString": "address[] calldata"
                       }
                     },
-                    "id": 1103,
+                    "id": 1226,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "memberName": "length",
                     "nodeType": "MemberAccess",
-                    "src": "871:14:1",
+                    "src": "1601:14:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "851:34:1"
+                  "src": "1581:34:1"
                 },
                 {
                   "expression": {
@@ -968,7 +2778,7 @@
                           "typeIdentifier": "t_bool",
                           "typeString": "bool"
                         },
-                        "id": 1112,
+                        "id": 1235,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -978,18 +2788,18 @@
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           },
-                          "id": 1108,
+                          "id": 1231,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftExpression": {
-                            "id": 1106,
+                            "id": 1229,
                             "name": "numAgents",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 1101,
-                            "src": "903:9:1",
+                            "referencedDeclaration": 1224,
+                            "src": "1633:9:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
@@ -999,21 +2809,21 @@
                           "operator": ">",
                           "rightExpression": {
                             "hexValue": "30",
-                            "id": 1107,
+                            "id": 1230,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
                             "kind": "number",
                             "lValueRequested": false,
                             "nodeType": "Literal",
-                            "src": "915:1:1",
+                            "src": "1645:1:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_rational_0_by_1",
                               "typeString": "int_const 0"
                             },
                             "value": "0"
                           },
-                          "src": "903:13:1",
+                          "src": "1633:13:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_bool",
                             "typeString": "bool"
@@ -1026,18 +2836,18 @@
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           },
-                          "id": 1111,
+                          "id": 1234,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftExpression": {
-                            "id": 1109,
+                            "id": 1232,
                             "name": "numAgents",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 1101,
-                            "src": "920:9:1",
+                            "referencedDeclaration": 1224,
+                            "src": "1650:9:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
@@ -1047,27 +2857,27 @@
                           "operator": "<=",
                           "rightExpression": {
                             "hexValue": "34",
-                            "id": 1110,
+                            "id": 1233,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
                             "kind": "number",
                             "lValueRequested": false,
                             "nodeType": "Literal",
-                            "src": "933:1:1",
+                            "src": "1663:1:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_rational_4_by_1",
                               "typeString": "int_const 4"
                             },
                             "value": "4"
                           },
-                          "src": "920:14:1",
+                          "src": "1650:14:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_bool",
                             "typeString": "bool"
                           }
                         },
-                        "src": "903:31:1",
+                        "src": "1633:31:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bool",
                           "typeString": "bool"
@@ -1075,14 +2885,14 @@
                       },
                       {
                         "hexValue": "496e76616c6964206e756d626572206f66206167656e7473",
-                        "id": 1113,
+                        "id": 1236,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "kind": "string",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "936:26:1",
+                        "src": "1666:26:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_stringliteral_3bf1b544f1f2aec92183b19fbef8fad9d4ef89c8b567b86334b3560c1cba9998",
                           "typeString": "literal_string \"Invalid number of agents\""
@@ -1101,7 +2911,7 @@
                           "typeString": "literal_string \"Invalid number of agents\""
                         }
                       ],
-                      "id": 1105,
+                      "id": 1228,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
@@ -1109,13 +2919,13 @@
                         -18
                       ],
                       "referencedDeclaration": -18,
-                      "src": "895:7:1",
+                      "src": "1625:7:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
                         "typeString": "function (bool,string memory) pure"
                       }
                     },
-                    "id": 1114,
+                    "id": 1237,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1123,45 +2933,45 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "895:68:1",
+                    "src": "1625:68:1",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 1115,
+                  "id": 1238,
                   "nodeType": "ExpressionStatement",
-                  "src": "895:68:1"
+                  "src": "1625:68:1"
                 },
                 {
                   "expression": {
-                    "id": 1120,
+                    "id": 1243,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "baseExpression": {
-                        "id": 1116,
+                        "id": 1239,
                         "name": "agents",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1063,
-                        "src": "974:6:1",
+                        "referencedDeclaration": 1077,
+                        "src": "1704:6:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_mapping$_t_uint256_$_t_array$_t_address_$dyn_storage_$",
                           "typeString": "mapping(uint256 => address[] storage ref)"
                         }
                       },
-                      "id": 1118,
+                      "id": 1241,
                       "indexExpression": {
-                        "id": 1117,
+                        "id": 1240,
                         "name": "gameId",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1077,
-                        "src": "981:6:1",
+                        "referencedDeclaration": 1200,
+                        "src": "1711:6:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -1172,7 +2982,7 @@
                       "isPure": false,
                       "lValueRequested": true,
                       "nodeType": "IndexAccess",
-                      "src": "974:14:1",
+                      "src": "1704:14:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_array$_t_address_$dyn_storage",
                         "typeString": "address[] storage ref"
@@ -1181,26 +2991,26 @@
                     "nodeType": "Assignment",
                     "operator": "=",
                     "rightHandSide": {
-                      "id": 1119,
+                      "id": 1242,
                       "name": "_agents",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1080,
-                      "src": "991:7:1",
+                      "referencedDeclaration": 1203,
+                      "src": "1721:7:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_array$_t_address_$dyn_calldata_ptr",
                         "typeString": "address[] calldata"
                       }
                     },
-                    "src": "974:24:1",
+                    "src": "1704:24:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_address_$dyn_storage",
                       "typeString": "address[] storage ref"
                     }
                   },
-                  "id": 1121,
+                  "id": 1244,
                   "nodeType": "ExpressionStatement",
-                  "src": "974:24:1"
+                  "src": "1704:24:1"
                 }
               ]
             },
@@ -1209,20 +3019,20 @@
             "kind": "function",
             "modifiers": [],
             "name": "startGame",
-            "nameLocation": "622:9:1",
+            "nameLocation": "1352:9:1",
             "parameters": {
-              "id": 1083,
+              "id": 1206,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1077,
+                  "id": 1200,
                   "mutability": "mutable",
                   "name": "gameId",
-                  "nameLocation": "649:6:1",
+                  "nameLocation": "1379:6:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1123,
-                  "src": "641:14:1",
+                  "scope": 1246,
+                  "src": "1371:14:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1230,10 +3040,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 1076,
+                    "id": 1199,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "641:7:1",
+                    "src": "1371:7:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1243,13 +3053,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 1080,
+                  "id": 1203,
                   "mutability": "mutable",
                   "name": "_agents",
-                  "nameLocation": "684:7:1",
+                  "nameLocation": "1414:7:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1123,
-                  "src": "665:26:1",
+                  "scope": 1246,
+                  "src": "1395:26:1",
                   "stateVariable": false,
                   "storageLocation": "calldata",
                   "typeDescriptions": {
@@ -1258,19 +3068,19 @@
                   },
                   "typeName": {
                     "baseType": {
-                      "id": 1078,
+                      "id": 1201,
                       "name": "address",
                       "nodeType": "ElementaryTypeName",
-                      "src": "665:7:1",
+                      "src": "1395:7:1",
                       "stateMutability": "nonpayable",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
                       }
                     },
-                    "id": 1079,
+                    "id": 1202,
                     "nodeType": "ArrayTypeName",
-                    "src": "665:9:1",
+                    "src": "1395:9:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
                       "typeString": "address[]"
@@ -1280,13 +3090,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 1082,
+                  "id": 1205,
                   "mutability": "mutable",
                   "name": "movesHash",
-                  "nameLocation": "709:9:1",
+                  "nameLocation": "1439:9:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1123,
-                  "src": "701:17:1",
+                  "scope": 1246,
+                  "src": "1431:17:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1294,10 +3104,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 1081,
+                    "id": 1204,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "701:7:1",
+                    "src": "1431:7:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1306,56 +3116,56 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "631:93:1"
+              "src": "1361:93:1"
             },
             "returnParameters": {
-              "id": 1084,
+              "id": 1207,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "732:0:1"
+              "src": "1462:0:1"
             },
-            "scope": 1176,
+            "scope": 1345,
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "public"
           },
           {
-            "id": 1140,
+            "id": 1263,
             "nodeType": "FunctionDefinition",
-            "src": "1011:111:1",
+            "src": "1741:111:1",
             "body": {
-              "id": 1139,
+              "id": 1262,
               "nodeType": "Block",
-              "src": "1051:71:1",
+              "src": "1781:71:1",
               "statements": [
                 {
                   "expression": {
-                    "id": 1132,
+                    "id": 1255,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "baseExpression": {
-                        "id": 1128,
+                        "id": 1251,
                         "name": "movesHashes",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1058,
-                        "src": "1061:11:1",
+                        "referencedDeclaration": 1072,
+                        "src": "1791:11:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_mapping$_t_uint256_$_t_uint256_$",
                           "typeString": "mapping(uint256 => uint256)"
                         }
                       },
-                      "id": 1130,
+                      "id": 1253,
                       "indexExpression": {
-                        "id": 1129,
+                        "id": 1252,
                         "name": "gameId",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1125,
-                        "src": "1073:6:1",
+                        "referencedDeclaration": 1248,
+                        "src": "1803:6:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -1366,7 +3176,7 @@
                       "isPure": false,
                       "lValueRequested": true,
                       "nodeType": "IndexAccess",
-                      "src": "1061:19:1",
+                      "src": "1791:19:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -1376,33 +3186,33 @@
                     "operator": "=",
                     "rightHandSide": {
                       "hexValue": "30",
-                      "id": 1131,
+                      "id": 1254,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
                       "kind": "number",
                       "lValueRequested": false,
                       "nodeType": "Literal",
-                      "src": "1083:1:1",
+                      "src": "1813:1:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_rational_0_by_1",
                         "typeString": "int_const 0"
                       },
                       "value": "0"
                     },
-                    "src": "1061:23:1",
+                    "src": "1791:23:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "id": 1133,
+                  "id": 1256,
                   "nodeType": "ExpressionStatement",
-                  "src": "1061:23:1"
+                  "src": "1791:23:1"
                 },
                 {
                   "expression": {
-                    "id": 1137,
+                    "id": 1260,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1410,28 +3220,28 @@
                     "nodeType": "UnaryOperation",
                     "operator": "delete",
                     "prefix": true,
-                    "src": "1094:21:1",
+                    "src": "1824:21:1",
                     "subExpression": {
                       "baseExpression": {
-                        "id": 1134,
+                        "id": 1257,
                         "name": "agents",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1063,
-                        "src": "1101:6:1",
+                        "referencedDeclaration": 1077,
+                        "src": "1831:6:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_mapping$_t_uint256_$_t_array$_t_address_$dyn_storage_$",
                           "typeString": "mapping(uint256 => address[] storage ref)"
                         }
                       },
-                      "id": 1136,
+                      "id": 1259,
                       "indexExpression": {
-                        "id": 1135,
+                        "id": 1258,
                         "name": "gameId",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1125,
-                        "src": "1108:6:1",
+                        "referencedDeclaration": 1248,
+                        "src": "1838:6:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -1442,7 +3252,7 @@
                       "isPure": false,
                       "lValueRequested": true,
                       "nodeType": "IndexAccess",
-                      "src": "1101:14:1",
+                      "src": "1831:14:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_array$_t_address_$dyn_storage",
                         "typeString": "address[] storage ref"
@@ -1453,9 +3263,9 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 1138,
+                  "id": 1261,
                   "nodeType": "ExpressionStatement",
-                  "src": "1094:21:1"
+                  "src": "1824:21:1"
                 }
               ]
             },
@@ -1464,20 +3274,20 @@
             "kind": "function",
             "modifiers": [],
             "name": "endGame",
-            "nameLocation": "1020:7:1",
+            "nameLocation": "1750:7:1",
             "parameters": {
-              "id": 1126,
+              "id": 1249,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1125,
+                  "id": 1248,
                   "mutability": "mutable",
                   "name": "gameId",
-                  "nameLocation": "1036:6:1",
+                  "nameLocation": "1766:6:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1140,
-                  "src": "1028:14:1",
+                  "scope": 1263,
+                  "src": "1758:14:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1485,10 +3295,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 1124,
+                    "id": 1247,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1028:7:1",
+                    "src": "1758:7:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1497,27 +3307,27 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1027:16:1"
+              "src": "1757:16:1"
             },
             "returnParameters": {
-              "id": 1127,
+              "id": 1250,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1051:0:1"
+              "src": "1781:0:1"
             },
-            "scope": 1176,
+            "scope": 1345,
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "public"
           },
           {
-            "id": 1175,
+            "id": 1298,
             "nodeType": "FunctionDefinition",
-            "src": "1128:288:1",
+            "src": "1858:288:1",
             "body": {
-              "id": 1174,
+              "id": 1297,
               "nodeType": "Block",
-              "src": "1287:129:1",
+              "src": "2017:129:1",
               "statements": [
                 {
                   "expression": {
@@ -1525,48 +3335,48 @@
                       {
                         "arguments": [
                           {
-                            "id": 1166,
+                            "id": 1289,
                             "name": "a",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 1144,
-                            "src": "1350:1:1",
+                            "referencedDeclaration": 1267,
+                            "src": "2080:1:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_array$_t_uint256_$2_memory_ptr",
                               "typeString": "uint256[2] memory"
                             }
                           },
                           {
-                            "id": 1167,
+                            "id": 1290,
                             "name": "b",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 1150,
-                            "src": "1353:1:1",
+                            "referencedDeclaration": 1273,
+                            "src": "2083:1:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_array$_t_array$_t_uint256_$2_memory_ptr_$2_memory_ptr",
                               "typeString": "uint256[2] memory[2] memory"
                             }
                           },
                           {
-                            "id": 1168,
+                            "id": 1291,
                             "name": "c",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 1154,
-                            "src": "1356:1:1",
+                            "referencedDeclaration": 1277,
+                            "src": "2086:1:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_array$_t_uint256_$2_memory_ptr",
                               "typeString": "uint256[2] memory"
                             }
                           },
                           {
-                            "id": 1169,
+                            "id": 1292,
                             "name": "input",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 1158,
-                            "src": "1359:5:1",
+                            "referencedDeclaration": 1281,
+                            "src": "2089:5:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_array$_t_uint256_$8_memory_ptr",
                               "typeString": "uint256[8] memory"
@@ -1595,12 +3405,12 @@
                           "expression": {
                             "arguments": [
                               {
-                                "id": 1163,
+                                "id": 1286,
                                 "name": "verifier",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
                                 "referencedDeclaration": 1054,
-                                "src": "1328:8:1",
+                                "src": "2058:8:1",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_contract$_IVerifier_$1051",
                                   "typeString": "contract IVerifier"
@@ -1614,18 +3424,18 @@
                                   "typeString": "contract IVerifier"
                                 }
                               ],
-                              "id": 1162,
+                              "id": 1285,
                               "name": "IVerifier",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
                               "referencedDeclaration": 1051,
-                              "src": "1318:9:1",
+                              "src": "2048:9:1",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_type$_t_contract$_IVerifier_$1051_$",
                                 "typeString": "type(contract IVerifier)"
                               }
                             },
-                            "id": 1164,
+                            "id": 1287,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -1633,14 +3443,14 @@
                             "lValueRequested": false,
                             "names": [],
                             "nodeType": "FunctionCall",
-                            "src": "1318:19:1",
+                            "src": "2048:19:1",
                             "tryCall": false,
                             "typeDescriptions": {
                               "typeIdentifier": "t_contract$_IVerifier_$1051",
                               "typeString": "contract IVerifier"
                             }
                           },
-                          "id": 1165,
+                          "id": 1288,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -1648,13 +3458,13 @@
                           "memberName": "verifyProof",
                           "nodeType": "MemberAccess",
                           "referencedDeclaration": 1050,
-                          "src": "1318:31:1",
+                          "src": "2048:31:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_external_view$_t_array$_t_uint256_$2_memory_ptr_$_t_array$_t_array$_t_uint256_$2_memory_ptr_$2_memory_ptr_$_t_array$_t_uint256_$2_memory_ptr_$_t_array$_t_uint256_$8_memory_ptr_$returns$_t_bool_$",
                             "typeString": "function (uint256[2] memory,uint256[2] memory[2] memory,uint256[2] memory,uint256[8] memory) view external returns (bool)"
                           }
                         },
-                        "id": 1170,
+                        "id": 1293,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -1662,7 +3472,7 @@
                         "lValueRequested": false,
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "1318:47:1",
+                        "src": "2048:47:1",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_bool",
@@ -1671,14 +3481,14 @@
                       },
                       {
                         "hexValue": "766572696669636174696f6e206572726f72",
-                        "id": 1171,
+                        "id": 1294,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "kind": "string",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "1379:20:1",
+                        "src": "2109:20:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_stringliteral_fa2ab9f58d3454dc752ea1a11cfb6ed9c90f5108d6ad66b0044a4b2d666d386f",
                           "typeString": "literal_string \"verification error\""
@@ -1697,7 +3507,7 @@
                           "typeString": "literal_string \"verification error\""
                         }
                       ],
-                      "id": 1161,
+                      "id": 1284,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
@@ -1705,13 +3515,13 @@
                         -18
                       ],
                       "referencedDeclaration": -18,
-                      "src": "1297:7:1",
+                      "src": "2027:7:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
                         "typeString": "function (bool,string memory) pure"
                       }
                     },
-                    "id": 1172,
+                    "id": 1295,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1719,16 +3529,16 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "1297:112:1",
+                    "src": "2027:112:1",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 1173,
+                  "id": 1296,
                   "nodeType": "ExpressionStatement",
-                  "src": "1297:112:1"
+                  "src": "2027:112:1"
                 }
               ]
             },
@@ -1737,20 +3547,20 @@
             "kind": "function",
             "modifiers": [],
             "name": "agentAskProof",
-            "nameLocation": "1137:13:1",
+            "nameLocation": "1867:13:1",
             "parameters": {
-              "id": 1159,
+              "id": 1282,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1144,
+                  "id": 1267,
                   "mutability": "mutable",
                   "name": "a",
-                  "nameLocation": "1178:1:1",
+                  "nameLocation": "1908:1:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1175,
-                  "src": "1160:19:1",
+                  "scope": 1298,
+                  "src": "1890:19:1",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -1759,26 +3569,26 @@
                   },
                   "typeName": {
                     "baseType": {
-                      "id": 1141,
+                      "id": 1264,
                       "name": "uint256",
                       "nodeType": "ElementaryTypeName",
-                      "src": "1160:7:1",
+                      "src": "1890:7:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
-                    "id": 1143,
+                    "id": 1266,
                     "length": {
                       "hexValue": "32",
-                      "id": 1142,
+                      "id": 1265,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
                       "kind": "number",
                       "lValueRequested": false,
                       "nodeType": "Literal",
-                      "src": "1168:1:1",
+                      "src": "1898:1:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_rational_2_by_1",
                         "typeString": "int_const 2"
@@ -1786,7 +3596,7 @@
                       "value": "2"
                     },
                     "nodeType": "ArrayTypeName",
-                    "src": "1160:10:1",
+                    "src": "1890:10:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_uint256_$2_storage_ptr",
                       "typeString": "uint256[2]"
@@ -1796,13 +3606,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 1150,
+                  "id": 1273,
                   "mutability": "mutable",
                   "name": "b",
-                  "nameLocation": "1210:1:1",
+                  "nameLocation": "1940:1:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1175,
-                  "src": "1189:22:1",
+                  "scope": 1298,
+                  "src": "1919:22:1",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -1812,26 +3622,26 @@
                   "typeName": {
                     "baseType": {
                       "baseType": {
-                        "id": 1145,
+                        "id": 1268,
                         "name": "uint256",
                         "nodeType": "ElementaryTypeName",
-                        "src": "1189:7:1",
+                        "src": "1919:7:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         }
                       },
-                      "id": 1147,
+                      "id": 1270,
                       "length": {
                         "hexValue": "32",
-                        "id": 1146,
+                        "id": 1269,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "kind": "number",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "1197:1:1",
+                        "src": "1927:1:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_rational_2_by_1",
                           "typeString": "int_const 2"
@@ -1839,23 +3649,23 @@
                         "value": "2"
                       },
                       "nodeType": "ArrayTypeName",
-                      "src": "1189:10:1",
+                      "src": "1919:10:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_array$_t_uint256_$2_storage_ptr",
                         "typeString": "uint256[2]"
                       }
                     },
-                    "id": 1149,
+                    "id": 1272,
                     "length": {
                       "hexValue": "32",
-                      "id": 1148,
+                      "id": 1271,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
                       "kind": "number",
                       "lValueRequested": false,
                       "nodeType": "Literal",
-                      "src": "1200:1:1",
+                      "src": "1930:1:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_rational_2_by_1",
                         "typeString": "int_const 2"
@@ -1863,7 +3673,7 @@
                       "value": "2"
                     },
                     "nodeType": "ArrayTypeName",
-                    "src": "1189:13:1",
+                    "src": "1919:13:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_array$_t_uint256_$2_storage_$2_storage_ptr",
                       "typeString": "uint256[2][2]"
@@ -1873,13 +3683,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 1154,
+                  "id": 1277,
                   "mutability": "mutable",
                   "name": "c",
-                  "nameLocation": "1239:1:1",
+                  "nameLocation": "1969:1:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1175,
-                  "src": "1221:19:1",
+                  "scope": 1298,
+                  "src": "1951:19:1",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -1888,26 +3698,26 @@
                   },
                   "typeName": {
                     "baseType": {
-                      "id": 1151,
+                      "id": 1274,
                       "name": "uint256",
                       "nodeType": "ElementaryTypeName",
-                      "src": "1221:7:1",
+                      "src": "1951:7:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
-                    "id": 1153,
+                    "id": 1276,
                     "length": {
                       "hexValue": "32",
-                      "id": 1152,
+                      "id": 1275,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
                       "kind": "number",
                       "lValueRequested": false,
                       "nodeType": "Literal",
-                      "src": "1229:1:1",
+                      "src": "1959:1:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_rational_2_by_1",
                         "typeString": "int_const 2"
@@ -1915,7 +3725,7 @@
                       "value": "2"
                     },
                     "nodeType": "ArrayTypeName",
-                    "src": "1221:10:1",
+                    "src": "1951:10:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_uint256_$2_storage_ptr",
                       "typeString": "uint256[2]"
@@ -1925,13 +3735,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 1158,
+                  "id": 1281,
                   "mutability": "mutable",
                   "name": "input",
-                  "nameLocation": "1268:5:1",
+                  "nameLocation": "1998:5:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1175,
-                  "src": "1250:23:1",
+                  "scope": 1298,
+                  "src": "1980:23:1",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -1940,26 +3750,26 @@
                   },
                   "typeName": {
                     "baseType": {
-                      "id": 1155,
+                      "id": 1278,
                       "name": "uint256",
                       "nodeType": "ElementaryTypeName",
-                      "src": "1250:7:1",
+                      "src": "1980:7:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
-                    "id": 1157,
+                    "id": 1280,
                     "length": {
                       "hexValue": "38",
-                      "id": 1156,
+                      "id": 1279,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
                       "kind": "number",
                       "lValueRequested": false,
                       "nodeType": "Literal",
-                      "src": "1258:1:1",
+                      "src": "1988:1:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_rational_8_by_1",
                         "typeString": "int_const 8"
@@ -1967,7 +3777,7 @@
                       "value": "8"
                     },
                     "nodeType": "ArrayTypeName",
-                    "src": "1250:10:1",
+                    "src": "1980:10:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_uint256_$8_storage_ptr",
                       "typeString": "uint256[8]"
@@ -1976,18 +3786,583 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1150:129:1"
+              "src": "1880:129:1"
             },
             "returnParameters": {
-              "id": 1160,
+              "id": 1283,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1287:0:1"
+              "src": "2017:0:1"
             },
-            "scope": 1176,
+            "scope": 1345,
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "public"
+          },
+          {
+            "id": 1344,
+            "nodeType": "FunctionDefinition",
+            "src": "2152:279:1",
+            "body": {
+              "id": 1343,
+              "nodeType": "Block",
+              "src": "2267:164:1",
+              "statements": [
+                {
+                  "body": {
+                    "id": 1341,
+                    "nodeType": "Block",
+                    "src": "2307:118:1",
+                    "statements": [
+                      {
+                        "assignments": [
+                          1324
+                        ],
+                        "declarations": [
+                          {
+                            "constant": false,
+                            "id": 1324,
+                            "mutability": "mutable",
+                            "name": "position",
+                            "nameLocation": "2337:8:1",
+                            "nodeType": "VariableDeclaration",
+                            "scope": 1341,
+                            "src": "2321:24:1",
+                            "stateVariable": false,
+                            "storageLocation": "memory",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_struct$_Position_$1068_memory_ptr",
+                              "typeString": "struct Game.Position"
+                            },
+                            "typeName": {
+                              "id": 1323,
+                              "nodeType": "UserDefinedTypeName",
+                              "pathNode": {
+                                "id": 1322,
+                                "name": "Position",
+                                "nodeType": "IdentifierPath",
+                                "referencedDeclaration": 1068,
+                                "src": "2321:8:1"
+                              },
+                              "referencedDeclaration": 1068,
+                              "src": "2321:8:1",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_struct$_Position_$1068_storage_ptr",
+                                "typeString": "struct Game.Position"
+                              }
+                            },
+                            "visibility": "internal"
+                          }
+                        ],
+                        "id": 1333,
+                        "initialValue": {
+                          "arguments": [
+                            {
+                              "baseExpression": {
+                                "id": 1326,
+                                "name": "x",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 1305,
+                                "src": "2357:1:1",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_array$_t_uint8_$5_memory_ptr",
+                                  "typeString": "uint8[5] memory"
+                                }
+                              },
+                              "id": 1328,
+                              "indexExpression": {
+                                "id": 1327,
+                                "name": "i",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 1313,
+                                "src": "2359:1:1",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_uint8",
+                                  "typeString": "uint8"
+                                }
+                              },
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "nodeType": "IndexAccess",
+                              "src": "2357:4:1",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint8",
+                                "typeString": "uint8"
+                              }
+                            },
+                            {
+                              "baseExpression": {
+                                "id": 1329,
+                                "name": "y",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 1309,
+                                "src": "2363:1:1",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_array$_t_uint8_$5_memory_ptr",
+                                  "typeString": "uint8[5] memory"
+                                }
+                              },
+                              "id": 1331,
+                              "indexExpression": {
+                                "id": 1330,
+                                "name": "i",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 1313,
+                                "src": "2365:1:1",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_uint8",
+                                  "typeString": "uint8"
+                                }
+                              },
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "nodeType": "IndexAccess",
+                              "src": "2363:4:1",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint8",
+                                "typeString": "uint8"
+                              }
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_uint8",
+                                "typeString": "uint8"
+                              },
+                              {
+                                "typeIdentifier": "t_uint8",
+                                "typeString": "uint8"
+                              }
+                            ],
+                            "id": 1325,
+                            "name": "Position",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 1068,
+                            "src": "2348:8:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_type$_t_struct$_Position_$1068_storage_ptr_$",
+                              "typeString": "type(struct Game.Position storage pointer)"
+                            }
+                          },
+                          "id": 1332,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "structConstructorCall",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "2348:20:1",
+                          "tryCall": false,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_Position_$1068_memory_ptr",
+                            "typeString": "struct Game.Position memory"
+                          }
+                        },
+                        "nodeType": "VariableDeclarationStatement",
+                        "src": "2321:47:1"
+                      },
+                      {
+                        "expression": {
+                          "arguments": [
+                            {
+                              "id": 1338,
+                              "name": "position",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 1324,
+                              "src": "2405:8:1",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_struct$_Position_$1068_memory_ptr",
+                                "typeString": "struct Game.Position memory"
+                              }
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_struct$_Position_$1068_memory_ptr",
+                                "typeString": "struct Game.Position memory"
+                              }
+                            ],
+                            "expression": {
+                              "baseExpression": {
+                                "id": 1334,
+                                "name": "features",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 1084,
+                                "src": "2382:8:1",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_mapping$_t_enum$_Features_$1063_$_t_array$_t_struct$_Position_$1068_storage_$dyn_storage_$",
+                                  "typeString": "mapping(enum Game.Features => struct Game.Position storage ref[] storage ref)"
+                                }
+                              },
+                              "id": 1336,
+                              "indexExpression": {
+                                "id": 1335,
+                                "name": "feature",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 1301,
+                                "src": "2391:7:1",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_enum$_Features_$1063",
+                                  "typeString": "enum Game.Features"
+                                }
+                              },
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "nodeType": "IndexAccess",
+                              "src": "2382:17:1",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_array$_t_struct$_Position_$1068_storage_$dyn_storage",
+                                "typeString": "struct Game.Position storage ref[] storage ref"
+                              }
+                            },
+                            "id": 1337,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "push",
+                            "nodeType": "MemberAccess",
+                            "src": "2382:22:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_function_arraypush_nonpayable$_t_array$_t_struct$_Position_$1068_storage_$dyn_storage_ptr_$_t_struct$_Position_$1068_storage_$returns$__$bound_to$_t_array$_t_struct$_Position_$1068_storage_$dyn_storage_ptr_$",
+                              "typeString": "function (struct Game.Position storage ref[] storage pointer,struct Game.Position storage ref)"
+                            }
+                          },
+                          "id": 1339,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "functionCall",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "2382:32:1",
+                          "tryCall": false,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_tuple$__$",
+                            "typeString": "tuple()"
+                          }
+                        },
+                        "id": 1340,
+                        "nodeType": "ExpressionStatement",
+                        "src": "2382:32:1"
+                      }
+                    ]
+                  },
+                  "condition": {
+                    "commonType": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    },
+                    "id": 1318,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "id": 1316,
+                      "name": "i",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1313,
+                      "src": "2295:1:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint8",
+                        "typeString": "uint8"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "<",
+                    "rightExpression": {
+                      "hexValue": "35",
+                      "id": 1317,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "2299:1:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_rational_5_by_1",
+                        "typeString": "int_const 5"
+                      },
+                      "value": "5"
+                    },
+                    "src": "2295:5:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 1342,
+                  "initializationExpression": {
+                    "assignments": [
+                      1313
+                    ],
+                    "declarations": [
+                      {
+                        "constant": false,
+                        "id": 1313,
+                        "mutability": "mutable",
+                        "name": "i",
+                        "nameLocation": "2288:1:1",
+                        "nodeType": "VariableDeclaration",
+                        "scope": 1342,
+                        "src": "2282:7:1",
+                        "stateVariable": false,
+                        "storageLocation": "default",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint8",
+                          "typeString": "uint8"
+                        },
+                        "typeName": {
+                          "id": 1312,
+                          "name": "uint8",
+                          "nodeType": "ElementaryTypeName",
+                          "src": "2282:5:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint8",
+                            "typeString": "uint8"
+                          }
+                        },
+                        "visibility": "internal"
+                      }
+                    ],
+                    "id": 1315,
+                    "initialValue": {
+                      "hexValue": "30",
+                      "id": 1314,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "2292:1:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_rational_0_by_1",
+                        "typeString": "int_const 0"
+                      },
+                      "value": "0"
+                    },
+                    "nodeType": "VariableDeclarationStatement",
+                    "src": "2282:11:1"
+                  },
+                  "loopExpression": {
+                    "expression": {
+                      "id": 1320,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "nodeType": "UnaryOperation",
+                      "operator": "++",
+                      "prefix": false,
+                      "src": "2302:3:1",
+                      "subExpression": {
+                        "id": 1319,
+                        "name": "i",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1313,
+                        "src": "2302:1:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint8",
+                          "typeString": "uint8"
+                        }
+                      },
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint8",
+                        "typeString": "uint8"
+                      }
+                    },
+                    "id": 1321,
+                    "nodeType": "ExpressionStatement",
+                    "src": "2302:3:1"
+                  },
+                  "nodeType": "ForStatement",
+                  "src": "2277:148:1"
+                }
+              ]
+            },
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "addFeature",
+            "nameLocation": "2161:10:1",
+            "parameters": {
+              "id": 1310,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1301,
+                  "mutability": "mutable",
+                  "name": "feature",
+                  "nameLocation": "2190:7:1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1344,
+                  "src": "2181:16:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_Features_$1063",
+                    "typeString": "enum Game.Features"
+                  },
+                  "typeName": {
+                    "id": 1300,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 1299,
+                      "name": "Features",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 1063,
+                      "src": "2181:8:1"
+                    },
+                    "referencedDeclaration": 1063,
+                    "src": "2181:8:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_Features_$1063",
+                      "typeString": "enum Game.Features"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1305,
+                  "mutability": "mutable",
+                  "name": "x",
+                  "nameLocation": "2223:1:1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1344,
+                  "src": "2207:17:1",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint8_$5_memory_ptr",
+                    "typeString": "uint8[5]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 1302,
+                      "name": "uint8",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "2207:5:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint8",
+                        "typeString": "uint8"
+                      }
+                    },
+                    "id": 1304,
+                    "length": {
+                      "hexValue": "35",
+                      "id": 1303,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "2213:1:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_rational_5_by_1",
+                        "typeString": "int_const 5"
+                      },
+                      "value": "5"
+                    },
+                    "nodeType": "ArrayTypeName",
+                    "src": "2207:8:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_uint8_$5_storage_ptr",
+                      "typeString": "uint8[5]"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1309,
+                  "mutability": "mutable",
+                  "name": "y",
+                  "nameLocation": "2250:1:1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1344,
+                  "src": "2234:17:1",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint8_$5_memory_ptr",
+                    "typeString": "uint8[5]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 1306,
+                      "name": "uint8",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "2234:5:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint8",
+                        "typeString": "uint8"
+                      }
+                    },
+                    "id": 1308,
+                    "length": {
+                      "hexValue": "35",
+                      "id": 1307,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "2240:1:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_rational_5_by_1",
+                        "typeString": "int_const 5"
+                      },
+                      "value": "5"
+                    },
+                    "nodeType": "ArrayTypeName",
+                    "src": "2234:8:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_uint8_$5_storage_ptr",
+                      "typeString": "uint8[5]"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2171:86:1"
+            },
+            "returnParameters": {
+              "id": 1311,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2267:0:1"
+            },
+            "scope": 1345,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "internal"
           }
         ],
         "abstract": false,
@@ -1997,11 +4372,11 @@
         "contractKind": "contract",
         "fullyImplemented": true,
         "linearizedBaseContracts": [
-          1176
+          1345
         ],
         "name": "Game",
-        "nameLocation": "329:4:1",
-        "scope": 1177,
+        "nameLocation": "328:4:1",
+        "scope": 1346,
         "usedErrors": []
       }
     ],

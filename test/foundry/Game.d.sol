@@ -21,5 +21,9 @@ contract GameTest {
 
         assert(game.agents(123, 0) == agents[0]);
         assert(game.movesHashes(123) == movesHash);
+
+        (uint8 x, uint8 y) = game.features(Game.Features.RED, 1);
+        assert(x == uint8(1));
+        assert(y == uint8(5));
     }
 }

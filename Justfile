@@ -38,3 +38,6 @@ powers_of_tau := build_dir + "/" + powers_of_tau_filename
 
 @build-dir:
   mkdir -p build
+
+@compile-contracts:
+  hardhat compile

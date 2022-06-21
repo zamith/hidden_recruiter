@@ -5,8 +5,6 @@ include "../../node_modules/circomlib/circuits/mimc.circom";
 template RecruiterMove() {
     // Public inputs
     signal input pubMovementHash;
-    // 0: up, 1: down, 2: left, 3: right
-    signal input new_move;
 
     // Private inputs
     signal input old_moves[35][2];
@@ -29,11 +27,6 @@ template RecruiterMove() {
     hash[0].in[2*noMoves] <== privSalt;
 
     pubMovementHash === hash[0].out;
-
-    // Check the new_move is valid
-    // Check new_move is orthogonal
-    // Check it does not go beyond the board
-    // Check it does not go to a previously visited position
 
     // Calculate the new hash
     hash[1] = MultiMiMC7(noMoves * 2 + 1, 91);
