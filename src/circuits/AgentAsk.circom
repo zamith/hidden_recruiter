@@ -4,19 +4,19 @@ include "../../node_modules/circomlib/circuits/comparators.circom";
 include "../../node_modules/circomlib/circuits/mimc.circom";
 
 template AgentAsk() {
+    var noMoves = 14;
     // Public inputs
     signal input ask_position[2];
     signal input pubMovementHash;
 
     // Private inputs
-    signal input moves[35][2];
+    signal input moves[noMoves][2];
     signal input privSalt;
 
     // Output
     signal output visited;
 
     // Check the moves are valid
-    var noMoves = 35;
     component hash = MultiMiMC7(noMoves * 2 + 1, 91);
     hash.k <== 256;
     for(var j = 0; j < noMoves; j++) {

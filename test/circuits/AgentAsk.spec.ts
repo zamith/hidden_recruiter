@@ -7,7 +7,7 @@ describe("AgentAsk", function () {
 
   it("is true if the recruiter has been to the place", async () => {
     const pubMovementHash = Fr.e(
-      "12161705107552638055056582591684085142116555511696014104619902267786701619978"
+      "14661562570220400304557756534380332684059033175579402621010282490798865787494"
     );
     const [, visited] = await testCircuit("src/circuits/AgentAsk.circom", {
       ask_position: [1, 1],
@@ -21,7 +21,7 @@ describe("AgentAsk", function () {
 
   it("is false if the recruiter has not been to the place", async () => {
     const pubMovementHash = Fr.e(
-      "12161705107552638055056582591684085142116555511696014104619902267786701619978"
+      "14661562570220400304557756534380332684059033175579402621010282490798865787494"
     );
     const [, visited] = await testCircuit("src/circuits/AgentAsk.circom", {
       ask_position: [3, 1],
@@ -39,27 +39,6 @@ describe("AgentAsk", function () {
       [0, 1],
       [1, 1],
       [2, 1],
-      [50, 50],
-      [50, 50],
-      [50, 50],
-      [50, 50],
-      [50, 50],
-      [50, 50],
-      [50, 50],
-      [50, 50],
-      [50, 50],
-      [50, 50],
-      [50, 50],
-      [50, 50],
-      [50, 50],
-      [50, 50],
-      [50, 50],
-      [50, 50],
-      [50, 50],
-      [50, 50],
-      [50, 50],
-      [50, 50],
-      [50, 50],
       [50, 50],
       [50, 50],
       [50, 50],
