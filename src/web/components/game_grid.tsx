@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useGameContract } from "../contracts";
+import { useBoardState } from "../hooks/use_board_state";
 
 import styles from "../styles/Home.module.css";
 import Space from "../components/space";
@@ -7,6 +8,7 @@ import Space from "../components/space";
 function GameGrid({ gameId }) {
   const [features, setFeatures] = useState({});
   const contract = useGameContract();
+  const boardState = useBoardState(gameId);
 
   const initGame = async () => {
     const numberOfFeatures = 5;
@@ -52,7 +54,7 @@ function GameGrid({ gameId }) {
             x={x}
             y={y}
             features={features[[x, y]]}
-            gameId={gameId}
+            boardState={boardState}
             key={`${x},${y}`}
           />
         );

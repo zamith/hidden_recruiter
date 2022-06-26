@@ -5,19 +5,37 @@ import "../../build/AgentAsk/AgentAskVerifier.sol";
 import "../../build/StartingMove/StartingMoveVerifier.sol";
 import "../../build/RecruiterMove/RecruiterMoveVerifier.sol";
 
-interface IVerifier {
+interface IFirstMoveVerifier {
     function verifyProof(
         uint256[2] memory a,
         uint256[2][2] memory b,
         uint256[2] memory c,
-        uint256[8] memory input
+        uint256[2] memory input
+    ) external view returns (bool);
+}
+
+interface IRecruiterMoveVerifier {
+    function verifyProof(
+        uint256[2] memory a,
+        uint256[2][2] memory b,
+        uint256[2] memory c,
+        uint256[4] memory input
+    ) external view returns (bool);
+}
+
+interface IAgentAskVerifier {
+    function verifyProof(
+        uint256[2] memory a,
+        uint256[2][2] memory b,
+        uint256[2] memory c,
+        uint256[27] memory input
     ) external view returns (bool);
 }
 
 contract Game {
-    IVerifier public agentAskVerifier;
-    IVerifier public firstMoveVerifier;
-    IVerifier public recruiterMoveVerifier;
+    IAgentAskVerifier public agentAskVerifier;
+    IFirstMoveVerifier public firstMoveVerifier;
+    IRecruiterMoveVerifier public recruiterMoveVerifier;
 
     enum Features {
         RED,
@@ -71,9 +89,9 @@ contract Game {
         address _firstMoveVerifier,
         address _recruiterMoveVerifier
     ) {
-        agentAskVerifier = IVerifier(_agentAskVerifier);
-        firstMoveVerifier = IVerifier(_firstMoveVerifier);
-        recruiterMoveVerifier = IVerifier(_recruiterMoveVerifier);
+        agentAskVerifier = IAgentAskVerifier(_agentAskVerifier);
+        firstMoveVerifier = IFirstMoveVerifier(_firstMoveVerifier);
+        recruiterMoveVerifier = IRecruiterMoveVerifier(_recruiterMoveVerifier);
         addFeature(Features.RED, [0, 1, 3, 4, 5], [0, 5, 4, 1, 3]);
         addFeature(Features.BLUE, [1, 4, 4, 0, 5], [0, 1, 3, 5, 6]);
         addFeature(Features.GREEN, [2, 3, 1, 3, 0], [0, 2, 3, 5, 6]);
@@ -83,17 +101,22 @@ contract Game {
     }
 
     modifier gameStatus(uint256 gameId, GameStatus status) {
-        require(gameStatuses[gameId] == status);
+        require(
+            gameStatuses[gameId] == status,
+            "Invalid game status for action"
+        );
         _;
     }
 
     modifier onlyRecruiter(uint256 gameId) {
-        require(recruiters[gameId] == msg.sender);
+        require(recruiters[gameId] == msg.sender, "Not the recruiter");
         _;
     }
 
     function agentsNeeded(uint256 gameId) public view returns (bool) {
-        return agents[gameId].length < 4;
+        return
+            agents[gameId].length < 4 &&
+            gameStatuses[gameId] == GameStatus.OPEN;
     }
 
     function numberOfRecruiterMoves(uint256 gameId)
@@ -167,7 +190,7 @@ contract Game {
         uint256[2] memory a,
         uint256[2][2] memory b,
         uint256[2] memory c,
-        uint256[8] memory input
+        uint256[2] memory input
     )
         public
         onlyRecruiter(gameId)
@@ -176,7 +199,7 @@ contract Game {
         uint256 numberOfMoves = movesHashes[gameId].length;
         require(numberOfMoves == 0, "Recruiter already made a move");
         require(
-            verifyProof(recruiterMoveVerifier, a, b, c, input),
+            IFirstMoveVerifier(firstMoveVerifier).verifyProof(a, b, c, input),
             "Failed to verify proof"
         );
 
@@ -189,7 +212,7 @@ contract Game {
         uint256[2] memory a,
         uint256[2][2] memory b,
         uint256[2] memory c,
-        uint256[8] memory input
+        uint256[4] memory input
     )
         public
         onlyRecruiter(gameId)
@@ -198,7 +221,12 @@ contract Game {
         uint256 numberOfMoves = movesHashes[gameId].length;
         require(numberOfMoves < 5, "Too many initial moves");
         require(
-            verifyProof(recruiterMoveVerifier, a, b, c, input),
+            IRecruiterMoveVerifier(recruiterMoveVerifier).verifyProof(
+                a,
+                b,
+                c,
+                input
+            ),
             "Failed to verify proof"
         );
 
@@ -215,12 +243,17 @@ contract Game {
         uint256[2] memory a,
         uint256[2][2] memory b,
         uint256[2] memory c,
-        uint256[8] memory input
+        uint256[4] memory input
     ) public onlyRecruiter(gameId) gameStatus(gameId, GameStatus.STARTED) {
         Round memory round = rounds[gameId];
         require(!round.recruiterMoved, "Recruiter already moved");
         require(
-            verifyProof(recruiterMoveVerifier, a, b, c, input),
+            IRecruiterMoveVerifier(recruiterMoveVerifier).verifyProof(
+                a,
+                b,
+                c,
+                input
+            ),
             "Failed to verify proof"
         );
 
@@ -247,16 +280,6 @@ contract Game {
         // if (round.agentsMoved.length == numberOfAgents(gameId)) {
         //     newRound(gameId);
         // }
-    }
-
-    function verifyProof(
-        IVerifier verifier,
-        uint256[2] memory a,
-        uint256[2][2] memory b,
-        uint256[2] memory c,
-        uint256[8] memory input
-    ) public view returns (bool) {
-        return IVerifier(verifier).verifyProof(a, b, c, input);
     }
 
     function addFeature(

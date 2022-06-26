@@ -1,0 +1,10 @@
+.container {
+  display: flex;
+}
+
+.grid {
+  flex: 1;
+}
+
+.controls {
+}

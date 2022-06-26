@@ -25,7 +25,7 @@ template RecruiterMove() {
     hash[0].inputs[0] <== privSalt;
 
     saltHash === hash[0].out;
-    updatedSaltHash <== saltHash;
+    updatedSaltHash <== hash[0].out;
 
     // Check the old move is correct
     hash[1] = Poseidon(3);
@@ -52,6 +52,8 @@ template RecruiterMove() {
     lowerBounds[1] = GreaterEqThan(4);
     lowerBounds[1].in[0] <== newPosition[1];
     lowerBounds[1].in[1] <== 0;
+
+    upperBounds[0].out + upperBounds[1].out + lowerBounds[0].out + lowerBounds[1].out === 4;
 
     component directions[4];
     for(var i = 0; i < 4; i++) {

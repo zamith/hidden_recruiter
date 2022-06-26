@@ -1,11 +1,9 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "../styles/Space.module.css";
 
-import { useBoardState } from "../hooks/use_board_state";
-
 export default function Space(props) {
-  const { features, x, y, gameId } = props;
-  const { move } = useBoardState(gameId);
+  const { features, x, y, boardState } = props;
+  const [agentsHere, setAgentsHere] = useState([]);
 
   const featureToClass = {
     0: "cardFeatureRed",
@@ -18,9 +16,17 @@ export default function Space(props) {
     7: "cardFeatureBlack",
   };
 
+  async function getAgentsHere() {
+    setAgentsHere(await boardState.agentsAt(x, y));
+  }
+
+  useEffect(() => {
+    getAgentsHere();
+  }, [boardState]);
+
   function handleMove(event) {
     event.preventDefault();
-    move(x, y);
+    boardState.move(x, y);
   }
 
   if (!features || features.length === 0) {
@@ -34,6 +40,8 @@ export default function Space(props) {
     );
   }
 
+  const recruiterHereAt = boardState.recruiterMovesToIndex()[[x, y]];
+
   return (
     <a href="#" className={styles.card} onClick={(e) => handleMove(e)}>
       {features.map((feature) => {
@@ -41,7 +49,17 @@ export default function Space(props) {
           <div
             className={`${styles.feature} ${styles[featureToClass[feature]]}`}
             key={`space(${x},${y},${feature})`}
-          ></div>
+          >
+            {recruiterHereAt && (
+              <div className={styles.recruiterToken}>{recruiterHereAt}</div>
+            )}
+
+            {agentsHere.map((agent, index) => (
+              <div key={index} className={styles.agentToken} title={agent}>
+                {agent}
+              </div>
+            ))}
+          </div>
         );
       })}
     </a>

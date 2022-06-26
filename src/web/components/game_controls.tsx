@@ -14,14 +14,18 @@ function GameControls({ gameId }) {
     args: [gameId, account?.address],
     onSuccess(data) {
       setRole("recruiter");
+      getRecruiter.refetch();
     },
   });
   const addAgent = useContractWrite(gameContractInfo(), "addAgent", {
     args: [gameId, account?.address],
     onSuccess(data) {
       setRole("agent");
-      getRecruiter.refetch();
+      agentsNeeded.refetch();
     },
+  });
+  const startGame = useContractWrite(gameContractInfo(), "startGame", {
+    args: [gameId],
   });
   const getRecruiter = useContractRead(
     gameContractInfoNoSigner(),
@@ -39,6 +43,14 @@ function GameControls({ gameId }) {
       enabled: false,
     }
   );
+  const gameStatus = useContractRead(
+    gameContractInfoNoSigner(),
+    "gameStatuses",
+    {
+      args: [gameId],
+      enabled: false,
+    }
+  );
 
   function recruiterIsSet() {
     return (
@@ -47,11 +59,11 @@ function GameControls({ gameId }) {
   }
 
   function isRecruiter() {
-    return getRecruiter.isFetched && getRecruiter.data === account.address;
+    return role === "recruiter";
   }
 
   function isAgent() {
-    // return getRecruiter.isFetched && getRecruiter.data === account.address;
+    return role === "agent";
   }
 
   function needsAgents() {
@@ -66,6 +78,7 @@ function GameControls({ gameId }) {
     if (gameId) {
       getRecruiter.refetch();
       agentsNeeded.refetch();
+      gameStatus.refetch();
     }
   }, [gameId]);
 
@@ -86,13 +99,24 @@ function GameControls({ gameId }) {
         </div>
       )}
 
-      {!isRecruiter() && needsAgents() && (
+      {!isRecruiter() && !isAgent() && needsAgents() && (
         <div>
           <button
             disabled={addAgent.isLoading}
             onClick={() => addAgent.write()}
           >
             Make me an agent
+          </button>
+        </div>
+      )}
+
+      {isRecruiter() && gameStatus.data === 1 && (
+        <div>
+          <button
+            disabled={startGame.isLoading}
+            onClick={() => startGame.write()}
+          >
+            Start Game
           </button>
         </div>
       )}

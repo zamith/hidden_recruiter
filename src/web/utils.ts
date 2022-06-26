@@ -24,25 +24,25 @@ function useLocalStorage(
   initialValue: string = ""
 ): [string, Dispatch<string>] {
   const [value, setValue] = useState(
-    () => window.localStorage.getItem(key) || initialValue
+    () => parseJSON(window.localStorage.getItem(key)) || initialValue
   );
 
   const setItem = (newValue: string) => {
     setValue(newValue);
-    window.localStorage.setItem(key, newValue);
+    window.localStorage.setItem(key, stringifyJSON(newValue));
   };
 
   useEffect(() => {
     const newValue = window.localStorage.getItem(key);
-    if (value !== newValue) {
-      setValue(newValue || initialValue);
+    if (stringifyJSON(value) !== newValue) {
+      setValue(parseJSON(newValue) || initialValue);
     }
   });
 
   const handleStorage = useCallback(
     (event: StorageEvent) => {
-      if (event.key === key && event.newValue !== value) {
-        setValue(event.newValue || initialValue);
+      if (event.key === key && event.newValue !== stringifyJSON(value)) {
+        setValue(parseJSON(event.newValue) || initialValue);
       }
     },
     [value]
@@ -54,4 +54,20 @@ function useLocalStorage(
   }, [handleStorage]);
 
   return [value, setItem];
+}
+
+function stringifyJSON(data) {
+  return JSON.stringify(data, (key, value) =>
+    typeof value === "bigint" ? value.toString() + "n" : value
+  );
+}
+
+function parseJSON(json) {
+  return JSON.parse(json, (key, value) => {
+    if (typeof value === "string" && /^\d+n$/.test(value)) {
+      return BigInt(value.substr(0, value.length - 1));
+    }
+
+    return value;
+  });
 }

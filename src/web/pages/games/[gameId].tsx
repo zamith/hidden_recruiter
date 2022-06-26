@@ -5,6 +5,7 @@ import Layout from "../../components/layout";
 import Profile from "../../components/profile";
 import GameGrid from "../../components/game_grid";
 import GameControls from "../../components/game_controls";
+import styles from "../../styles/GamePage.module.css";
 
 const GamePage: NextPage = () => {
   const router = useRouter();
@@ -13,8 +14,10 @@ const GamePage: NextPage = () => {
   return (
     <Layout>
       <Profile />
-      <GameGrid gameId={gameId} />
-      <GameControls gameId={gameId} />
+      <div className={styles.container}>
+        <GameGrid className={styles.grid} gameId={gameId} />
+        <GameControls className={styles.controls} gameId={gameId} />
+      </div>
     </Layout>
   );
 };
