@@ -1,81 +1,79 @@
 pragma circom 2.0.0;
 
 include "../../node_modules/circomlib/circuits/comparators.circom";
-include "../../node_modules/circomlib/circuits/mimc.circom";
+include "../../node_modules/circomlib/circuits/poseidon.circom";
 
 template RecruiterMove() {
-    var noMoves = 14;
-    var emptyMove = 50;
-
     // Public inputs
-    signal input pubMovementHash;
+    signal input oldPositionHash;
+    signal input saltHash;
 
     // Private inputs
-    signal input newMove[2];
-    signal input oldMoves[noMoves][2];
-    signal input updatedMoves[noMoves][2];
+    signal input currentPosition[2];
+    signal input newPosition[2];
+    // 0 = up, 1 = right, 2 = down, 3 = left
+    signal input moveDirection;
     signal input privSalt;
 
     // Output
-    signal output movementHashOut;
+    signal output updatedSaltHash;
+    signal output newPositionHash;
 
-    component hash[2];
-    // Check the moves so far haven't changed
-    hash[0] = MultiMiMC7(noMoves * 2 + 1, 91);
-    hash[0].k <== 256;
-    for(var j = 0; j < noMoves; j++) {
-      for(var i = 0; i < 2; i++) {
-        hash[0].in[2*j+i] <== oldMoves[j][i];
-      }
-    }
-    hash[0].in[2*noMoves] <== privSalt;
+    component hash[3];
+    // Check salt hasn't been tampered with
+    hash[0] = Poseidon(1);
+    hash[0].inputs[0] <== privSalt;
 
-    pubMovementHash === hash[0].out;
+    saltHash === hash[0].out;
+    updatedSaltHash <== saltHash;
 
-    // Check new moves and old moves match
-    component matcher[noMoves][2];
-    var matched = 0;
-    for(var j = 0; j < noMoves; j++) {
-      for(var i = 0; i < 2; i++) {
-        matcher[j][i] = IsEqual();
-        matcher[j][i].in[0] <== updatedMoves[j][i];
-        matcher[j][i].in[1] <== oldMoves[j][i];
-        matched += matcher[j][i].out;
-      }
-    }
+    // Check the old move is correct
+    hash[1] = Poseidon(3);
+    hash[1].inputs[0] <== currentPosition[0];
+    hash[1].inputs[1] <== currentPosition[1];
+    hash[1].inputs[2] <== privSalt;
 
-    // All existing positions should match on both x and y
-    matched === (noMoves - 1) * 2;
+    oldPositionHash === hash[1].out;
 
     component upperBounds[2];
     component lowerBounds[2];
     // Check x value is within bounds
     upperBounds[0] = LessEqThan(4);
-    upperBounds[0].in[0] <== newMove[0];
+    upperBounds[0].in[0] <== newPosition[0];
     upperBounds[0].in[1] <== 5;
     lowerBounds[0] = GreaterEqThan(4);
-    lowerBounds[0].in[0] <== newMove[0];
+    lowerBounds[0].in[0] <== newPosition[0];
     lowerBounds[0].in[1] <== 0;
 
     // Check y value is within bounds
     upperBounds[1] = LessEqThan(4);
-    upperBounds[1].in[0] <== newMove[1];
+    upperBounds[1].in[0] <== newPosition[1];
     upperBounds[1].in[1] <== 6;
     lowerBounds[1] = GreaterEqThan(4);
-    lowerBounds[1].in[0] <== newMove[1];
+    lowerBounds[1].in[0] <== newPosition[1];
     lowerBounds[1].in[1] <== 0;
 
-    // Calculate the new hash
-    hash[1] = MultiMiMC7(noMoves * 2 + 1, 91);
-    hash[1].k <== 256;
-    for(var j = 0; j < noMoves; j++) {
-      for(var i = 0; i < 2; i++) {
-        hash[1].in[2*j+i] <== updatedMoves[j][i];
-      }
+    component directions[4];
+    for(var i = 0; i < 4; i++) {
+      directions[i] = IsEqual();
+      directions[i].in[0] <== moveDirection;
+      directions[i].in[1] <== i;
     }
-    hash[1].in[2*noMoves] <== privSalt;
 
-    movementHashOut <== hash[1].out;
+    // Check they actually moved
+    directions[0].out + directions[1].out + directions[2].out + directions[3].out === 1;
+
+    // Check Orthogonal move
+    currentPosition[0] + directions[1].out - directions[3].out === newPosition[0];
+    currentPosition[1] + directions[0].out - directions[2].out === newPosition[1];
+
+    // Calculate the new hash
+    hash[2] = Poseidon(3);
+    hash[2].inputs[0] <== newPosition[0];
+    hash[2].inputs[1] <== newPosition[1];
+    hash[2].inputs[2] <== privSalt;
+
+    newPositionHash <== hash[2].out;
 }
 
-component main {public [pubMovementHash]} = RecruiterMove();
+component main {public [oldPositionHash, saltHash]} = RecruiterMove();

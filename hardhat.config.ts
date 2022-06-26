@@ -13,6 +13,7 @@ export default {
     paths: [
       "build/AgentAsk/AgentAskVerifier.sol",
       "build/RecruiterMove/RecruiterMoveVerifier.sol",
+      "build/StartingMove/StartingMoveVerifier.sol",
     ],
   },
   paths: {

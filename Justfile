@@ -1,10 +1,12 @@
 set positional-arguments
 
 build_dir := "./build"
+public_dir := "./src/web/public"
 
 all:
   just compile RecruiterMove
   just compile AgentAsk
+  just compile StartingMove
 
 #
 # Circom compilation
@@ -21,9 +23,9 @@ all:
   # TODO bump solidity version
 
   sed -i sol 's/pragma solidity .*;/pragma solidity ^0.8.0;/' {{build_dir}}/{{c}}/{{c}}Verifier.sol
+  sed -i sol 's/Pairing/{{c}}Pairing/g' {{build_dir}}/{{c}}/{{c}}Verifier.sol
   sed -i sol 's/contract Verifier/contract {{c}}Verifier/' {{build_dir}}/{{c}}/{{c}}Verifier.sol
   echo Done
-
 
 #
 # Powers of Tau setup
@@ -38,6 +40,18 @@ powers_of_tau := build_dir + "/" + powers_of_tau_filename
 
 @build-dir:
   mkdir -p build
+
+@prepare-all-js:
+  just prepare-js RecruiterMove
+  just prepare-js AgentAsk
+  just prepare-js StartingMove
+
+@prepare-js c: (js-dir c)
+  cp {{build_dir}}/{{c}}/{{c}}_js/{{c}}.wasm {{public_dir}}/{{c}}
+  cp {{build_dir}}/{{c}}/final.zkey {{public_dir}}/{{c}}
+
+@js-dir c:
+  mkdir -p {{public_dir}}/{{c}}
 
 @compile-contracts:
   hardhat compile

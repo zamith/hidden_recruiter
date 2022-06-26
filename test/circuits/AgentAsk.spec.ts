@@ -10,7 +10,13 @@ describe("AgentAsk", function () {
       "14661562570220400304557756534380332684059033175579402621010282490798865787494"
     );
     const [, visited] = await testCircuit("src/circuits/AgentAsk.circom", {
-      ask_position: [1, 1],
+      askPositions: [
+        [1, 1],
+        [2, 1],
+        [3, 1],
+        [4, 1],
+        [4, 2],
+      ],
       pubMovementHash: pubMovementHash,
       moves: moves(),
       privSalt: Fr.e("54325666"),

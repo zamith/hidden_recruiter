@@ -8,101 +8,90 @@ describe("RecruiterMove", function () {
   this.timeout(100000000);
 
   it("is true if the move is valid", async () => {
-    const pubMovementHash = Fr.e(
-      "14661562570220400304557756534380332684059033175579402621010282490798865787494"
+    const oldPositionHash = Fr.e(
+      "19320191077368389061484541147293851813695633683046981399108678313582319073963"
     );
-    const newMove = [3, 1];
+    const saltHash = Fr.e(
+      "8016425014317990530442927998422967325567423100823384616572282301216804908444"
+    );
 
-    const [valid, newHash] = await testCircuit(
+    const [_valid, updatedSaltHash, newPositionHash] = await testCircuit(
       "src/circuits/RecruiterMove.circom",
       {
-        newMove: newMove,
-        pubMovementHash: pubMovementHash,
-        updatedMoves: updatedMoves(newMove),
-        oldMoves: oldMoves(),
+        currentPosition: [2, 1],
+        newPosition: [3, 1],
+        moveDirection: 1,
+        oldPositionHash: oldPositionHash,
+        saltHash: saltHash,
         privSalt: Fr.e("54325666"),
       }
     );
 
-    expect(valid).to.frEq(1);
-    expect(newHash).to.frEq(
+    expect(updatedSaltHash).to.frEq(saltHash);
+    expect(newPositionHash).to.frEq(
       Fr.e(
-        "2009700648142929371758411387655140572637421401912403447540310693356513974054"
+        "16804455789330227375872268341739782469247210261748214837473768853964358120025"
       )
     );
   });
 
-  it("is false if the updated moves have been tampered with", async () => {
-    const pubMovementHash = Fr.e(
-      "12161705107552638055056582591684085142116555511696014104619902267786701619978"
+  it("is false if new position is out of bounds", async () => {
+    const oldPositionHash = Fr.e(
+      "19320191077368389061484541147293851813695633683046981399108678313582319073963"
     );
-    const newMove = [3, 1];
+    const saltHash = Fr.e(
+      "8016425014317990530442927998422967325567423100823384616572282301216804908444"
+    );
 
     expect(
       testCircuit("src/circuits/RecruiterMove.circom", {
-        newMove: newMove,
-        pubMovementHash: pubMovementHash,
-        oldMoves: oldMoves(),
-        updatedMoves: tamperedMoves(),
+        currentPosition: [2, 1],
+        newPosition: [7, 1],
+        moveDirection: 1,
+        oldPositionHash: oldPositionHash,
+        saltHash: saltHash,
         privSalt: Fr.e("54325666"),
       })
     ).to.eventually.be.rejectedWith(Error, /Assert Error/);
   });
 
-  function oldMoves() {
-    return [
-      [0, 0],
-      [0, 1],
-      [1, 1],
-      [2, 1],
-      [50, 50],
-      [50, 50],
-      [50, 50],
-      [50, 50],
-      [50, 50],
-      [50, 50],
-      [50, 50],
-      [50, 50],
-      [50, 50],
-      [50, 50],
-    ];
-  }
+  it("is false if new position is not orthogonal", async () => {
+    const oldPositionHash = Fr.e(
+      "19320191077368389061484541147293851813695633683046981399108678313582319073963"
+    );
+    const saltHash = Fr.e(
+      "8016425014317990530442927998422967325567423100823384616572282301216804908444"
+    );
 
-  function updatedMoves(newMove: number[]) {
-    return [
-      [0, 0],
-      [0, 1],
-      [1, 1],
-      [2, 1],
-      newMove,
-      [50, 50],
-      [50, 50],
-      [50, 50],
-      [50, 50],
-      [50, 50],
-      [50, 50],
-      [50, 50],
-      [50, 50],
-      [50, 50],
-    ];
-  }
+    expect(
+      testCircuit("src/circuits/RecruiterMove.circom", {
+        currentPosition: [2, 1],
+        newPosition: [3, 2],
+        moveDirection: 1,
+        oldPositionHash: oldPositionHash,
+        saltHash: saltHash,
+        privSalt: Fr.e("54325666"),
+      })
+    ).to.eventually.be.rejectedWith(Error, /Assert Error/);
+  });
 
-  function tamperedMoves() {
-    return [
-      [0, 0],
-      [0, 1],
-      [1, 2],
-      [2, 1],
-      [3, 1],
-      [50, 50],
-      [50, 50],
-      [50, 50],
-      [50, 50],
-      [50, 50],
-      [50, 50],
-      [50, 50],
-      [50, 50],
-      [50, 50],
-    ];
-  }
+  it("is false if new position is not in the given direction", async () => {
+    const oldPositionHash = Fr.e(
+      "19320191077368389061484541147293851813695633683046981399108678313582319073963"
+    );
+    const saltHash = Fr.e(
+      "8016425014317990530442927998422967325567423100823384616572282301216804908444"
+    );
+
+    expect(
+      testCircuit("src/circuits/RecruiterMove.circom", {
+        currentPosition: [2, 1],
+        newPosition: [1, 1],
+        moveDirection: 1,
+        oldPositionHash: oldPositionHash,
+        saltHash: saltHash,
+        privSalt: Fr.e("54325666"),
+      })
+    ).to.eventually.be.rejectedWith(Error, /Assert Error/);
+  });
 });

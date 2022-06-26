@@ -12,7 +12,7 @@
 //
 // SPDX-License-Identifier: GPL-3.0
 pragma solidity ^0.8.0;
-library RecruiterMovePairing {
+library StartingMovePairing {
     struct G1Point {
         uint X;
         uint Y;
@@ -161,69 +161,59 @@ library RecruiterMovePairing {
         return pairing(p1, p2);
     }
 }
-contract RecruiterMoveVerifier {
-    using RecruiterMovePairing for *;
+contract Verifier {
+    using StartingMovePairing for *;
     struct VerifyingKey {
-        RecruiterMovePairing.G1Point alfa1;
-        RecruiterMovePairing.G2Point beta2;
-        RecruiterMovePairing.G2Point gamma2;
-        RecruiterMovePairing.G2Point delta2;
-        RecruiterMovePairing.G1Point[] IC;
+        StartingMovePairing.G1Point alfa1;
+        StartingMovePairing.G2Point beta2;
+        StartingMovePairing.G2Point gamma2;
+        StartingMovePairing.G2Point delta2;
+        StartingMovePairing.G1Point[] IC;
     }
     struct Proof {
-        RecruiterMovePairing.G1Point A;
-        RecruiterMovePairing.G2Point B;
-        RecruiterMovePairing.G1Point C;
+        StartingMovePairing.G1Point A;
+        StartingMovePairing.G2Point B;
+        StartingMovePairing.G1Point C;
     }
     function verifyingKey() internal pure returns (VerifyingKey memory vk) {
-        vk.alfa1 = RecruiterMovePairing.G1Point(
+        vk.alfa1 = StartingMovePairing.G1Point(
             20491192805390485299153009773594534940189261866228447918068658471970481763042,
             9383485363053290200918347156157836566562967994039712273449902621266178545958
         );
 
-        vk.beta2 = RecruiterMovePairing.G2Point(
+        vk.beta2 = StartingMovePairing.G2Point(
             [4252822878758300859123897981450591353533073413197771768651442665752259397132,
              6375614351688725206403948262868962793625744043794305715222011528459656738731],
             [21847035105528745403288232691147584728191162732299865338377159692350059136679,
              10505242626370262277552901082094356697409835680220590971873171140371331206856]
         );
-        vk.gamma2 = RecruiterMovePairing.G2Point(
+        vk.gamma2 = StartingMovePairing.G2Point(
             [11559732032986387107991004021392285783925812861821192530917403151452391805634,
              10857046999023057135944570762232829481370756359578518086990519993285655852781],
             [4082367875863433681332203403145435568316851327593401208105741076214120093531,
              8495653923123431417604973247489272438418190587263600148770280649306958101930]
         );
-        vk.delta2 = RecruiterMovePairing.G2Point(
-            [7574544649625290742779270870238401361264838658153834521605928987487787161320,
-             1663513773714999385689394095336911927569260455608764840018027404090202600066],
-            [8993057433658862359254006663817778224159466537268250966073596556438414236168,
-             6424082221963558640466917029778401810377603588513939382018821625877497739237]
+        vk.delta2 = StartingMovePairing.G2Point(
+            [1119162967073150359710285773288509075045022607726466590205529005626687760959,
+             1542805444538894412430977625163466223696621527822295599394019550327180243381],
+            [1565613816403531976605786756779210752040880842434783131769687910151832526476,
+             5916730759168594902465296403075348133517785237298789175010111346387037413409]
         );
-        vk.IC = new RecruiterMovePairing.G1Point[](5);
+        vk.IC = new StartingMovePairing.G1Point[](3);
         
-        vk.IC[0] = RecruiterMovePairing.G1Point( 
-            3096830277453988697011360412113005447483640492639852257526745679723142191303,
-            2622852228476922526516503850803180708888907459829036019096300970330405629355
+        vk.IC[0] = StartingMovePairing.G1Point( 
+            8702008202926266891367387296042042863110363032378392205313735191540139279354,
+            11571740035827114946382918893701056729600421609772893929428043736372894194616
         );                                      
         
-        vk.IC[1] = RecruiterMovePairing.G1Point( 
-            16571615707767107713205003566810039788810637093461798721636486661518605972776,
-            12377425528765276117417111409420844526341429473500491582744427997499504535141
+        vk.IC[1] = StartingMovePairing.G1Point( 
+            18917848653568221714033128970394630056899127944627183003100520429624442390968,
+            62771916349513899407398796422954413867705180572272699456140689997417919709
         );                                      
         
-        vk.IC[2] = RecruiterMovePairing.G1Point( 
-            16805749542910131755990057558910279979364591541853853413588566392610117497141,
-            7827250795183741929717591836189272442419445220878025189213640695462652791787
-        );                                      
-        
-        vk.IC[3] = RecruiterMovePairing.G1Point( 
-            3597315305018072854794939066195911597637365505114185314597496801400771917486,
-            9079403575763224881214015697487321314015313627336237709024370119983628848861
-        );                                      
-        
-        vk.IC[4] = RecruiterMovePairing.G1Point( 
-            2088705838002327886706773208473923654306588850863082581449132075465842441567,
-            17052793785398249076719558743685857701365593516432171939020841374316766919200
+        vk.IC[2] = StartingMovePairing.G1Point( 
+            15170177288751218900722406389062875724388225361271489211642476729947063337633,
+            12885612631482986081989973763281344397972874185323899643307984585273429213216
         );                                      
         
     }
@@ -232,14 +222,14 @@ contract RecruiterMoveVerifier {
         VerifyingKey memory vk = verifyingKey();
         require(input.length + 1 == vk.IC.length,"verifier-bad-input");
         // Compute the linear combination vk_x
-        RecruiterMovePairing.G1Point memory vk_x = RecruiterMovePairing.G1Point(0, 0);
+        StartingMovePairing.G1Point memory vk_x = StartingMovePairing.G1Point(0, 0);
         for (uint i = 0; i < input.length; i++) {
             require(input[i] < snark_scalar_field,"verifier-gte-snark-scalar-field");
-            vk_x = RecruiterMovePairing.addition(vk_x, RecruiterMovePairing.scalar_mul(vk.IC[i + 1], input[i]));
+            vk_x = StartingMovePairing.addition(vk_x, StartingMovePairing.scalar_mul(vk.IC[i + 1], input[i]));
         }
-        vk_x = RecruiterMovePairing.addition(vk_x, vk.IC[0]);
-        if (!RecruiterMovePairing.pairingProd4(
-            RecruiterMovePairing.negate(proof.A), proof.B,
+        vk_x = StartingMovePairing.addition(vk_x, vk.IC[0]);
+        if (!StartingMovePairing.pairingProd4(
+            StartingMovePairing.negate(proof.A), proof.B,
             vk.alfa1, vk.beta2,
             vk_x, vk.gamma2,
             proof.C, vk.delta2
@@ -251,12 +241,12 @@ contract RecruiterMoveVerifier {
             uint[2] memory a,
             uint[2][2] memory b,
             uint[2] memory c,
-            uint[4] memory input
+            uint[2] memory input
         ) public view returns (bool r) {
         Proof memory proof;
-        proof.A = RecruiterMovePairing.G1Point(a[0], a[1]);
-        proof.B = RecruiterMovePairing.G2Point([b[0][0], b[0][1]], [b[1][0], b[1][1]]);
-        proof.C = RecruiterMovePairing.G1Point(c[0], c[1]);
+        proof.A = StartingMovePairing.G1Point(a[0], a[1]);
+        proof.B = StartingMovePairing.G2Point([b[0][0], b[0][1]], [b[1][0], b[1][1]]);
+        proof.C = StartingMovePairing.G1Point(c[0], c[1]);
         uint[] memory inputValues = new uint[](input.length);
         for(uint i = 0; i < input.length; i++){
             inputValues[i] = input[i];

@@ -1,9 +1,11 @@
 import React from "react";
 import styles from "../styles/Space.module.css";
 
+import { useBoardState } from "../hooks/use_board_state";
+
 export default function Space(props) {
-  const { features, x, y } = props;
-  const key = `space(${x},${y})`;
+  const { features, x, y, gameId } = props;
+  const { move } = useBoardState(gameId);
 
   const featureToClass = {
     0: "cardFeatureRed",
@@ -16,27 +18,32 @@ export default function Space(props) {
     7: "cardFeatureBlack",
   };
 
+  function handleMove(event) {
+    event.preventDefault();
+    move(x, y);
+  }
+
   if (!features || features.length === 0) {
     return (
-      <div className={styles.card}>
+      <a href="#" className={styles.card} onClick={(e) => handleMove(e)}>
         <div
           className={`${styles.feature} ${styles.cardNoFeature}`}
-          key={key}
+          key={`space(${x},${y})`}
         ></div>
-      </div>
+      </a>
     );
   }
 
   return (
-    <div className={styles.card}>
+    <a href="#" className={styles.card} onClick={(e) => handleMove(e)}>
       {features.map((feature) => {
         return (
           <div
             className={`${styles.feature} ${styles[featureToClass[feature]]}`}
-            key={key}
+            key={`space(${x},${y},${feature})`}
           ></div>
         );
       })}
-    </div>
+    </a>
   );
 }
