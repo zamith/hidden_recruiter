@@ -88,6 +88,10 @@ Next.JS. In terms of ZK, the most important files are `snarkjs.ts` and
 the `contracts.ts` file, which contains the configurations to interact with the
 smart contract.
 
+A game uses localstorage is currently doesn't clean up after itself, make sure to clear your localstorage when you move between games.
+
+Also, there are no loading states in the app, depending on your network give it a seconds and/or refresh the page to see the outcome.
+
 ## Run locally
 
 ### Clone the Repo
