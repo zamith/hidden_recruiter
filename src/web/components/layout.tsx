@@ -1,21 +1,16 @@
-import {
-  WagmiConfig,
-  createClient,
-  configureChains,
-  chain,
-  defaultChains,
-} from "wagmi";
+import { WagmiConfig, createClient, configureChains, chain } from "wagmi";
 import { publicProvider } from "wagmi/providers/public";
 import { jsonRpcProvider } from "wagmi/providers/jsonRpc";
 import { InjectedConnector } from "wagmi/connectors/injected";
 
+console.log(chain.polygon);
+
 const { provider, chains } = configureChains(
-  [chain.hardhat, ...defaultChains],
+  [chain.hardhat, chain.polygon],
   [
     publicProvider(),
     jsonRpcProvider({
       rpc: (currentChain) => {
-        if (currentChain.id !== chain.hardhat.id) return null;
         return { http: currentChain.rpcUrls.default };
       },
     }),
