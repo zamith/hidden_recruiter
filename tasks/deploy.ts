@@ -34,11 +34,45 @@ task("deploy", "Deploy contracts")
         `RecruiterMoveVerifier contract has been deployed to: ${recruiterMoveVerifier.address}`
       );
 
+    const AgentAskNoMatchVerifierContract = await ethers.getContractFactory(
+      "AgentAskNoMatchVerifier"
+    );
+    const agentAskNoMatchVerifier =
+      await AgentAskNoMatchVerifierContract.deploy();
+    await agentAskNoMatchVerifier.deployed();
+    logs &&
+      console.log(
+        `AgentAskNoMatchVerifier contract has been deployed to: ${agentAskNoMatchVerifier.address}`
+      );
+
+    const AgentCaptureVerifierContract = await ethers.getContractFactory(
+      "AgentCaptureVerifier"
+    );
+    const agentCaptureVerifier = await AgentCaptureVerifierContract.deploy();
+    await agentCaptureVerifier.deployed();
+    logs &&
+      console.log(
+        `AgentCaptureVerifier contract has been deployed to: ${agentCaptureVerifier.address}`
+      );
+
+    const AgentRevealVerifierContract = await ethers.getContractFactory(
+      "AgentRevealVerifier"
+    );
+    const agentRevealVerifier = await AgentRevealVerifierContract.deploy();
+    await agentRevealVerifier.deployed();
+    logs &&
+      console.log(
+        `AgentRevealVerifier contract has been deployed to: ${agentRevealVerifier.address}`
+      );
+
     const GameContract = await ethers.getContractFactory("Game");
     const game = await GameContract.deploy(
       agentAskVerifier.address,
       startingMoveVerifier.address,
-      recruiterMoveVerifier.address
+      recruiterMoveVerifier.address,
+      agentAskNoMatchVerifier.address,
+      agentCaptureVerifier.address,
+      agentRevealVerifier.address
     );
     await game.deployed();
     logs && console.log(`Game contract has been deployed to: ${game.address}`);

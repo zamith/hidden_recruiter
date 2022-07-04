@@ -2,42 +2,30 @@
 pragma solidity ^0.8.4;
 
 import "../../build/AgentAsk/AgentAskVerifier.sol";
+import "../../build/AgentAskNoMatch/AgentAskNoMatchVerifier.sol";
+import "../../build/AgentCapture/AgentCaptureVerifier.sol";
+import "../../build/AgentReveal/AgentRevealVerifier.sol";
 import "../../build/StartingMove/StartingMoveVerifier.sol";
 import "../../build/RecruiterMove/RecruiterMoveVerifier.sol";
 
-interface IFirstMoveVerifier {
-    function verifyProof(
-        uint256[2] memory a,
-        uint256[2][2] memory b,
-        uint256[2] memory c,
-        uint256[2] memory input
-    ) external view returns (bool);
-}
-
-interface IRecruiterMoveVerifier {
-    function verifyProof(
-        uint256[2] memory a,
-        uint256[2][2] memory b,
-        uint256[2] memory c,
-        uint256[4] memory input
-    ) external view returns (bool);
-}
-
-interface IAgentAskVerifier {
-    function verifyProof(
-        uint256[2] memory a,
-        uint256[2][2] memory b,
-        uint256[2] memory c,
-        uint256[27] memory input
-    ) external view returns (bool);
-}
-
 contract Game {
-    IAgentAskVerifier public agentAskVerifier;
-    IFirstMoveVerifier public firstMoveVerifier;
-    IRecruiterMoveVerifier public recruiterMoveVerifier;
+    AgentAskVerifier public agentAskVerifier;
+    AgentAskNoMatchVerifier public agentAskNoMatchVerifier;
+    AgentCaptureVerifier public agentCaptureVerifier;
+    AgentRevealVerifier public agentRevealVerifier;
+    StartingMoveVerifier public firstMoveVerifier;
+    RecruiterMoveVerifier public recruiterMoveVerifier;
 
-    enum Features {
+    event AgentMoved(address indexed agent, Position to);
+    event AgentAsked(address indexed agent, Feature feature);
+    event AgentRevealed(address indexed agent, Position pos);
+    event AgentCaptured(address indexed agent, Position pos);
+    event RecruiterMoved();
+    event AskAnswered();
+    event CaptureAnswered();
+    event RevealAnswered();
+
+    enum Feature {
         RED,
         BLUE,
         GREEN,
@@ -52,7 +40,9 @@ contract Game {
         NOT_OPEN,
         OPEN,
         RECRUITER_INITIAL_MOVES,
-        STARTED
+        STARTED,
+        RECRUITER_WON,
+        AGENTS_WON
     }
 
     struct Position {
@@ -60,10 +50,18 @@ contract Game {
         uint8 y;
     }
 
+    struct Token {
+        uint256 number;
+        bool numberRevelead;
+        bool revealed;
+    }
+
     struct Round {
         uint256 number;
         bool recruiterMoved;
-        address[] agentsMoved;
+        uint256 numberOfAgentsActed;
+        mapping(address => bool) agentsMoved;
+        mapping(address => bool) agentsActed;
     }
 
     // game id to moves hash
@@ -78,26 +76,53 @@ contract Game {
     mapping(uint256 => Round) public rounds;
     // game id to agent positions
     mapping(uint256 => mapping(address => Position)) public agentPositions;
-
+    // game id to agent to exists
+    mapping(uint256 => mapping(address => bool)) agentInGame;
     // features to positions with those features
-    mapping(Features => Position[]) public features;
+    mapping(Feature => Position[]) public features;
+
+    // x, y, feature
+    mapping(uint256 => mapping(uint256 => Feature[])) positionToFeatures;
+
+    // game id, x, y, token
+    mapping(uint256 => mapping(uint256 => mapping(uint256 => Token)))
+        public tokens;
 
     uint256 public nextGameId;
+
+    mapping(uint256 => Feature) public currentAgentAsk;
+    mapping(uint256 => bool) public hasAsk;
+
+    mapping(uint256 => Position) public currentAgentReveal;
+    mapping(uint256 => bool) public hasReveal;
+
+    mapping(uint256 => Position) public currentAgentCapture;
+    mapping(uint256 => bool) public hasCapture;
 
     constructor(
         address _agentAskVerifier,
         address _firstMoveVerifier,
-        address _recruiterMoveVerifier
+        address _recruiterMoveVerifier,
+        address _agentAskNoMatchVerifier,
+        address _agentCaptureVerifier,
+        address _agentRevealVerifier
     ) {
-        agentAskVerifier = IAgentAskVerifier(_agentAskVerifier);
-        firstMoveVerifier = IFirstMoveVerifier(_firstMoveVerifier);
-        recruiterMoveVerifier = IRecruiterMoveVerifier(_recruiterMoveVerifier);
-        addFeature(Features.RED, [0, 1, 3, 4, 5], [0, 5, 4, 1, 3]);
-        addFeature(Features.BLUE, [1, 4, 4, 0, 5], [0, 1, 3, 5, 6]);
-        addFeature(Features.GREEN, [2, 3, 1, 3, 0], [0, 2, 3, 5, 6]);
-        addFeature(Features.YELLOW, [3, 1, 3, 1, 2], [0, 1, 3, 4, 6]);
-        addFeature(Features.PURPLE, [4, 2, 5, 0, 4], [0, 2, 2, 3, 5]);
-        addFeature(Features.ORANGE, [5, 0, 3, 4, 1], [0, 1, 1, 5, 6]);
+        agentAskVerifier = AgentAskVerifier(_agentAskVerifier);
+        firstMoveVerifier = StartingMoveVerifier(_firstMoveVerifier);
+        recruiterMoveVerifier = RecruiterMoveVerifier(_recruiterMoveVerifier);
+        agentAskNoMatchVerifier = AgentAskNoMatchVerifier(
+            _agentAskNoMatchVerifier
+        );
+        agentCaptureVerifier = AgentCaptureVerifier(_agentCaptureVerifier);
+        agentRevealVerifier = AgentRevealVerifier(_agentRevealVerifier);
+        addFeature(Feature.RED, [0, 1, 3, 5, 5], [0, 5, 4, 1, 3]);
+        addFeature(Feature.BLUE, [1, 4, 4, 0, 5], [0, 1, 3, 5, 6]);
+        addFeature(Feature.GREEN, [2, 3, 1, 3, 0], [0, 2, 3, 5, 6]);
+        addFeature(Feature.YELLOW, [3, 1, 3, 1, 2], [0, 1, 3, 4, 6]);
+        addFeature(Feature.PURPLE, [4, 2, 5, 0, 4], [0, 2, 2, 3, 5]);
+        addFeature(Feature.ORANGE, [5, 2, 3, 5, 1], [0, 5, 1, 4, 6]);
+        addFeature(Feature.BLACK, [0, 1, 2, 4, 2], [1, 2, 3, 6, 4]);
+        addFeature(Feature.WHITE, [0, 2, 0, 4, 3], [2, 1, 4, 4, 6]);
     }
 
     modifier gameStatus(uint256 gameId, GameStatus status) {
@@ -110,6 +135,11 @@ contract Game {
 
     modifier onlyRecruiter(uint256 gameId) {
         require(recruiters[gameId] == msg.sender, "Not the recruiter");
+        _;
+    }
+
+    modifier onlyAgent(uint256 gameId) {
+        require(agentInGame[gameId][msg.sender], "Not an agent");
         _;
     }
 
@@ -135,9 +165,10 @@ contract Game {
         public
         gameStatus(gameId, GameStatus.OPEN)
     {
-        uint256 numAgents = agents[gameId].length + 1;
-        require(numAgents > 0 && numAgents <= 4, "Invalid number of agents");
+        uint256 numAgents = agents[gameId].length;
+        require(numAgents >= 0 && numAgents <= 4, "Invalid number of agents");
         agents[gameId].push(agent);
+        agentInGame[gameId][agent] = true;
     }
 
     function setRecruiter(uint256 gameId, address recruiter)
@@ -170,7 +201,9 @@ contract Game {
             Position(5, 7)
         ];
         for (uint256 i = 0; i < numAgents; i++) {
-            agentPositions[gameId][agents[gameId][i]] = startingPositions[i];
+            address agent = agents[gameId][i];
+            agentPositions[gameId][agent] = startingPositions[i];
+            emit AgentMoved(agent, startingPositions[i]);
         }
     }
 
@@ -199,7 +232,7 @@ contract Game {
         uint256 numberOfMoves = movesHashes[gameId].length;
         require(numberOfMoves == 0, "Recruiter already made a move");
         require(
-            IFirstMoveVerifier(firstMoveVerifier).verifyProof(a, b, c, input),
+            firstMoveVerifier.verifyProof(a, b, c, input),
             "Failed to verify proof"
         );
 
@@ -221,12 +254,7 @@ contract Game {
         uint256 numberOfMoves = movesHashes[gameId].length;
         require(numberOfMoves < 5, "Too many initial moves");
         require(
-            IRecruiterMoveVerifier(recruiterMoveVerifier).verifyProof(
-                a,
-                b,
-                c,
-                input
-            ),
+            recruiterMoveVerifier.verifyProof(a, b, c, input),
             "Failed to verify proof"
         );
 
@@ -245,60 +273,220 @@ contract Game {
         uint256[2] memory c,
         uint256[4] memory input
     ) public onlyRecruiter(gameId) gameStatus(gameId, GameStatus.STARTED) {
-        Round memory round = rounds[gameId];
+        Round storage round = rounds[gameId];
         require(!round.recruiterMoved, "Recruiter already moved");
         require(
-            IRecruiterMoveVerifier(recruiterMoveVerifier).verifyProof(
-                a,
-                b,
-                c,
-                input
-            ),
+            recruiterMoveVerifier.verifyProof(a, b, c, input),
             "Failed to verify proof"
         );
 
         movesHashes[gameId].push(moveHash);
         round.recruiterMoved = true;
+        emit RecruiterMoved();
     }
 
     function agentMove(
         uint256 gameId,
         uint8 x,
         uint8 y
-    ) public gameStatus(gameId, GameStatus.STARTED) {
+    ) public gameStatus(gameId, GameStatus.STARTED) onlyAgent(gameId) {
         Round storage round = rounds[gameId];
         require(round.recruiterMoved, "Recruiter has not moved yet");
-        require(
-            agentPositions[gameId][msg.sender].x != 0,
-            "Agent does not have a position in this game"
+        require(!round.agentsMoved[msg.sender], "Agent already moved");
+
+        Position memory currentPosition = agentPositions[gameId][msg.sender];
+        uint8 xDelta = x > currentPosition.x
+            ? x - currentPosition.x
+            : currentPosition.x - x;
+        uint8 yDelta = y > currentPosition.y
+            ? y - currentPosition.y
+            : currentPosition.y - y;
+
+        if (xDelta == 2 && yDelta != 0) {
+            revert("Invalid move");
+        }
+
+        if (yDelta == 2 && xDelta != 0) {
+            revert("Invalid move");
+        }
+
+        if (xDelta > 1 || yDelta > 1) {
+            revert("Invalid move");
+        }
+
+        Position memory newPosition = Position(x, y);
+        agentPositions[gameId][msg.sender] = newPosition;
+        round.agentsMoved[msg.sender] = true;
+        emit AgentMoved(msg.sender, newPosition);
+    }
+
+    function agentAskNotify(uint256 gameId, uint256[2] calldata position)
+        public
+    {
+        Round storage round = rounds[gameId];
+        require(round.recruiterMoved, "Recruiter has not moved yet");
+        require(!round.agentsActed[msg.sender], "Agent already acted");
+
+        Feature feature = positionToFeatures[position[0]][position[1]][0];
+        currentAgentAsk[gameId] = feature;
+        hasAsk[gameId] = true;
+        round.agentsActed[msg.sender] = true;
+        round.numberOfAgentsActed++;
+        emit AgentAsked(msg.sender, feature);
+
+        if (round.numberOfAgentsActed == numberOfAgents(gameId)) {
+            newRound(gameId);
+        }
+    }
+
+    function agentRevealNotify(uint256 gameId, uint256[2] calldata position)
+        public
+    {
+        Round storage round = rounds[gameId];
+        require(round.recruiterMoved, "Recruiter has not moved yet");
+        require(!round.agentsActed[msg.sender], "Agent already acted");
+        Position memory currentPosition = Position(
+            uint8(position[0]),
+            uint8(position[1])
         );
 
-        agentPositions[gameId][msg.sender] = Position(x, y);
-        round.agentsMoved.push(msg.sender);
+        currentAgentReveal[gameId] = currentPosition;
+        hasReveal[gameId] = true;
+        round.agentsActed[msg.sender] = true;
+        round.numberOfAgentsActed++;
+        emit AgentRevealed(msg.sender, currentPosition);
 
-        // Add after agent actions
-        // if (round.agentsMoved.length == numberOfAgents(gameId)) {
-        //     newRound(gameId);
-        // }
+        if (round.numberOfAgentsActed == numberOfAgents(gameId)) {
+            newRound(gameId);
+        }
+    }
+
+    function agentCaptureNotify(uint256 gameId, uint256[2] calldata position)
+        public
+    {
+        Round storage round = rounds[gameId];
+        require(round.recruiterMoved, "Recruiter has not moved yet");
+        require(!round.agentsActed[msg.sender], "Agent already acted");
+        Position memory currentPosition = Position(
+            uint8(position[0]),
+            uint8(position[1])
+        );
+
+        currentAgentCapture[gameId] = currentPosition;
+        hasCapture[gameId] = true;
+        round.agentsActed[msg.sender] = true;
+        round.numberOfAgentsActed++;
+        emit AgentCaptured(msg.sender, currentPosition);
+
+        if (round.numberOfAgentsActed == numberOfAgents(gameId)) {
+            newRound(gameId);
+        }
+    }
+
+    function agentAskRevealPosition(
+        uint256 gameId,
+        uint256[2] memory a,
+        uint256[2][2] memory b,
+        uint256[2] memory c,
+        uint256[27] memory input
+    ) public onlyRecruiter(gameId) gameStatus(gameId, GameStatus.STARTED) {
+        require(
+            agentAskVerifier.verifyProof(a, b, c, input),
+            "Failed to verify proof"
+        );
+
+        tokens[gameId][input[11]][input[12]] = Token(0, false, true);
+        hasAsk[gameId] = false;
+        emit AskAnswered();
+    }
+
+    function agentAskRevealNoPosition(
+        uint256 gameId,
+        uint256[2] memory a,
+        uint256[2][2] memory b,
+        uint256[2] memory c,
+        uint256[25] memory input
+    ) public onlyRecruiter(gameId) gameStatus(gameId, GameStatus.STARTED) {
+        require(
+            agentAskNoMatchVerifier.verifyProof(a, b, c, input),
+            "Failed to verify proof"
+        );
+
+        hasAsk[gameId] = false;
+        emit AskAnswered();
+    }
+
+    function agentCapture(
+        uint256 gameId,
+        uint256[2] memory a,
+        uint256[2][2] memory b,
+        uint256[2] memory c,
+        uint256[4] memory input
+    ) public onlyRecruiter(gameId) gameStatus(gameId, GameStatus.STARTED) {
+        require(
+            agentCaptureVerifier.verifyProof(a, b, c, input),
+            "Failed to verify proof"
+        );
+
+        hasCapture[gameId] = false;
+        if (input[0] == 1) {
+            gameStatuses[gameId] = GameStatus.AGENTS_WON;
+        }
+        emit CaptureAnswered();
+    }
+
+    function agentReveal(
+        uint256 gameId,
+        uint256[2] memory a,
+        uint256[2][2] memory b,
+        uint256[2] memory c,
+        uint256[4] memory input
+    ) public onlyRecruiter(gameId) gameStatus(gameId, GameStatus.STARTED) {
+        require(
+            agentRevealVerifier.verifyProof(a, b, c, input),
+            "Failed to verify proof"
+        );
+        Token storage token = tokens[gameId][input[0]][input[1]];
+        token.number = input[2];
+        token.numberRevelead = true;
+
+        hasReveal[gameId] = false;
+        emit RevealAnswered();
     }
 
     function addFeature(
-        Features feature,
+        Feature feature,
         uint8[5] memory x,
         uint8[5] memory y
     ) internal {
         for (uint8 i = 0; i < 5; i++) {
             Position memory position = Position(x[i], y[i]);
             features[feature].push(position);
+            positionToFeatures[position.x][position.y].push(feature);
         }
     }
 
     function newRound(uint256 gameId) internal {
-        uint256 numberOfRounds = rounds[gameId].number + 1;
-        rounds[gameId] = Round(
-            numberOfRounds,
-            false,
-            new address[](numberOfAgents(gameId))
-        );
+        Round storage round = rounds[gameId];
+        address[] memory gameAgents = agents[gameId];
+        uint256 numberOfRounds = round.number + 1;
+
+        if (numberOfRounds > 14) {
+            gameStatuses[gameId] = GameStatus.RECRUITER_WON;
+            return;
+        }
+
+        for (uint256 i = 0; i < round.numberOfAgentsActed; i++) {
+            delete round.agentsActed[gameAgents[i]];
+            delete round.agentsMoved[gameAgents[i]];
+        }
+
+        round.number = numberOfRounds;
+        round.recruiterMoved = false;
+        round.numberOfAgentsActed = 0;
+    }
+
+    function min(uint256 a, uint256 b) external pure returns (uint256) {
+        return a >= b ? b : a;
     }
 }

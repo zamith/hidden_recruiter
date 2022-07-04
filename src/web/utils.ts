@@ -56,13 +56,13 @@ function useLocalStorage(
   return [value, setItem];
 }
 
-function stringifyJSON(data) {
+export function stringifyJSON(data) {
   return JSON.stringify(data, (key, value) =>
     typeof value === "bigint" ? value.toString() + "n" : value
   );
 }
 
-function parseJSON(json) {
+export function parseJSON(json) {
   return JSON.parse(json, (key, value) => {
     if (typeof value === "string" && /^\d+n$/.test(value)) {
       return BigInt(value.substr(0, value.length - 1));

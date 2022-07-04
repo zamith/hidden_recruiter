@@ -3,7 +3,6 @@ import { gameContractInfo, gameContractInfoNoSigner } from "../contracts";
 import { useContractWrite, useContractRead } from "wagmi";
 
 function Game() {
-  // const gameContract = useGameContract();
   const router = useRouter();
   const { data: nextGameId } = useContractRead(
     gameContractInfoNoSigner(),

@@ -1,0 +1,4 @@
+.agentActions {
+  display: flex;
+  flex-direction: column;
+}

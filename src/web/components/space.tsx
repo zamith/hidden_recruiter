@@ -1,9 +1,13 @@
 import React, { useEffect, useState } from "react";
+import { useContractRead } from "wagmi";
+
+import { gameContractInfoNoSigner } from "../contracts";
 import styles from "../styles/Space.module.css";
 
 export default function Space(props) {
-  const { features, x, y, boardState } = props;
+  const { features, x, y, boardState, gameId } = props;
   const [agentsHere, setAgentsHere] = useState([]);
+  const [recruiterHereAt, setRecruiterHereAt] = useState();
 
   const featureToClass = {
     0: "cardFeatureRed",
@@ -16,17 +20,25 @@ export default function Space(props) {
     7: "cardFeatureBlack",
   };
 
-  async function getAgentsHere() {
-    setAgentsHere(await boardState.agentsAt(x, y));
-  }
+  const token = useContractRead(gameContractInfoNoSigner(), "tokens", {
+    args: [gameId, x, y],
+  });
 
   useEffect(() => {
-    getAgentsHere();
-  }, [boardState]);
+    const moves = boardState.recruiterMovesToIndex();
+    setRecruiterHereAt(moves[JSON.stringify([x, y])]);
+  }, [boardState.recruiterMoves]);
 
-  function handleMove(event) {
+  useEffect(() => {
+    const position = boardState.agentPositions[JSON.stringify([x, y])];
+    if (position) {
+      setAgentsHere(position);
+    }
+  }, [boardState.agentPositions, boardState.agentLocation]);
+
+  async function handleMove(event) {
     event.preventDefault();
-    boardState.move(x, y);
+    await boardState.move(x, y);
   }
 
   if (!features || features.length === 0) {
@@ -35,12 +47,20 @@ export default function Space(props) {
         <div
           className={`${styles.feature} ${styles.cardNoFeature}`}
           key={`space(${x},${y})`}
-        ></div>
+        >
+          {recruiterHereAt && (
+            <div className={styles.recruiterToken}>{recruiterHereAt}</div>
+          )}
+
+          {agentsHere.map((agent, index) => (
+            <div key={index} className={styles.agentToken} title={agent}>
+              {agent}
+            </div>
+          ))}
+        </div>
       </a>
     );
   }
-
-  const recruiterHereAt = boardState.recruiterMovesToIndex()[[x, y]];
 
   return (
     <a href="#" className={styles.card} onClick={(e) => handleMove(e)}>
@@ -59,6 +79,12 @@ export default function Space(props) {
                 {agent}
               </div>
             ))}
+
+            {token.data && token.data.revealed && (
+              <div className={styles.token}>
+                {token.data.numberRevelead && token.data.number.toString()}
+              </div>
+            )}
           </div>
         );
       })}

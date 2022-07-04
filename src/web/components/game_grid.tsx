@@ -7,11 +7,12 @@ import Space from "../components/space";
 
 function GameGrid({ gameId }) {
   const [features, setFeatures] = useState({});
+  const [refresh, setRefresh] = useState(null);
   const contract = useGameContract();
   const boardState = useBoardState(gameId);
 
   const initGame = async () => {
-    const numberOfFeatures = 5;
+    const numberOfFeatures = 8;
     const spacesPerFeature = 5;
     const featuresPositions = {};
 
@@ -55,6 +56,7 @@ function GameGrid({ gameId }) {
             y={y}
             features={features[[x, y]]}
             boardState={boardState}
+            gameId={gameId}
             key={`${x},${y}`}
           />
         );

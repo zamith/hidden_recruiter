@@ -11,6 +11,10 @@ const GamePage: NextPage = () => {
   const router = useRouter();
   const { gameId } = router.query;
 
+  if (!gameId) {
+    return;
+  }
+
   return (
     <Layout>
       <Profile />

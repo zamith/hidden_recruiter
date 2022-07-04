@@ -5,8 +5,11 @@ public_dir := "./src/web/public"
 
 all:
   just compile RecruiterMove
-  just compile AgentAsk
   just compile StartingMove
+  just compile AgentAsk
+  just compile AgentAskNoMatch
+  just compile AgentCapture
+  just compile AgentReveal
 
 #
 # Circom compilation
@@ -43,8 +46,11 @@ powers_of_tau := build_dir + "/" + powers_of_tau_filename
 
 @prepare-all-js:
   just prepare-js RecruiterMove
-  just prepare-js AgentAsk
   just prepare-js StartingMove
+  just prepare-js AgentAsk
+  just prepare-js AgentAskNoMatch
+  just prepare-js AgentCapture
+  just prepare-js AgentReveal
 
 @prepare-js c: (js-dir c)
   cp {{build_dir}}/{{c}}/{{c}}_js/{{c}}.wasm {{public_dir}}/{{c}}

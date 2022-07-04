@@ -1,7 +1,7 @@
 import { useContract, useProvider, useSigner } from "wagmi";
 
 import GameContract from "../../artifacts/src/contracts/Game.sol/Game.json";
-const GAME_ADDRESS = "0xcf7ed3acca5a467e9e704c703e8d87f634fb0fc9";
+const GAME_ADDRESS = "0x0165878A594ca255338adfa4d48449f69242Eb8F";
 
 export function useGameContract() {
   return useContract(gameContractInfo());
