@@ -13,7 +13,6 @@ import {
   gameContractInfo,
 } from "../contracts";
 import { useIsSSR, useSSRLocalStorage } from "../utils";
-import GameContract from "../../../artifacts/src/contracts/Game.sol/Game.json";
 import { useBoardState } from "../hooks/use_board_state";
 import styles from "../styles/GameControls.module.css";
 
